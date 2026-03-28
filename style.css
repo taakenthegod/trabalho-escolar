@@ -224,3 +224,128 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem;text-align:center}
   .famous-photo,.famous-photo-placeholder{width:60px;height:60px}
   .animals-grid{grid-template-columns:1fr}
 }
+
+/* ---- BLACK COFFEE MENÇÃO HONROSA ---- */
+.blackcoffee-block { margin: 4rem 0; }
+.blackcoffee-card {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0a00 50%, #0d0d1a 100%);
+  border: 1px solid #f0a500;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 0 60px rgba(240,165,0,0.12), 0 0 120px rgba(240,165,0,0.05);
+}
+.bc-header {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 2.5rem;
+  padding: 2.5rem;
+  background: linear-gradient(90deg, rgba(240,165,0,0.08) 0%, transparent 100%);
+  border-bottom: 1px solid rgba(240,165,0,0.2);
+  align-items: center;
+}
+.bc-photo-wrap {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #f0a500;
+  box-shadow: 0 0 30px rgba(240,165,0,0.3);
+  flex-shrink: 0;
+}
+.bc-photo { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.bc-photo-placeholder {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 4rem; background: #1a1a1a;
+}
+.bc-badge {
+  display: inline-block;
+  background: linear-gradient(90deg, #f0a500, #ff6b00);
+  color: #000;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.3rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 0.8rem;
+}
+.bc-name {
+  font-family: var(--display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  color: #f0a500;
+  margin: 0.3rem 0 0.5rem;
+  line-height: 1.1;
+}
+.bc-tag {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: rgba(240,165,0,0.7);
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+.bc-subtitle {
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 1rem;
+  margin: 0;
+}
+.bc-body { padding: 2.5rem; display: grid; gap: 2.5rem; }
+.bc-doc h4, .bc-music h4, .bc-raves h4 {
+  font-family: var(--display);
+  font-size: 1.1rem;
+  color: #f0a500;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(240,165,0,0.2);
+}
+.bc-doc p { color: var(--text-muted); line-height: 1.8; }
+.bc-doc strong { color: #f0a500; }
+.bc-player-wrap { margin: 1rem 0 0.7rem; border-radius: 12px; overflow: hidden; }
+.bc-music-note { font-size: 0.82rem; color: var(--text-muted); margin: 0; }
+.bc-link { color: #f0a500; text-decoration: none; }
+.bc-link:hover { text-decoration: underline; }
+.bc-raves-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+.bc-rave-card {
+  background: rgba(240,165,0,0.05);
+  border: 1px solid rgba(240,165,0,0.2);
+  border-radius: var(--radius-sm);
+  padding: 1.5rem;
+  transition: all 0.3s;
+}
+.bc-rave-card:hover {
+  background: rgba(240,165,0,0.1);
+  border-color: rgba(240,165,0,0.5);
+  transform: translateY(-3px);
+}
+.bc-rave-icon { font-size: 2rem; margin-bottom: 0.7rem; }
+.bc-rave-card h5 {
+  font-family: var(--display);
+  font-size: 1.1rem;
+  color: #f0a500;
+  margin: 0 0 0.3rem;
+}
+.bc-rave-year {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: rgba(240,165,0,0.6);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+.bc-rave-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin: 0; }
+
+@media(max-width:900px) {
+  .bc-raves-grid { grid-template-columns: 1fr; }
+  .bc-header { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+  .bc-photo-wrap { width: 160px; height: 160px; }
+}
