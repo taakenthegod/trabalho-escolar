@@ -155,7 +155,7 @@ document.head.appendChild(rs);
 
 // Helper: build image tag with fallback emoji
 function img(src, alt, cls = '') {
-  return `<img class="${cls}" src="${src}" alt="${alt}" loading="lazy" onerror="this.parentElement.innerHTML='<span style=\\'font-size:3rem\\'>${alt}</span>'" />`;
+  return `<img class="${cls}" src="${src}" alt="${alt}" loading="lazy" onerror="this.onerror=null;this.style.display='none';" />`;
 }
 
 // Wikipedia thumbnail helper — uses the REST API which is CORS-accessible
@@ -341,7 +341,7 @@ function renderFood(containerId, foods) {
     card.innerHTML = `
       <div class="food-img-wrap">
         ${hasImg
-          ? `<img src="${f.img}" alt="${f.name}" loading="lazy" style="width:100%;height:180px;object-fit:cover;display:block;" onerror="this.parentElement.innerHTML='<div class=food-img-placeholder style=background:${f.bg}>${f.emoji}</div>'">`
+          ? `<img src="${f.img}" alt="${f.name}" loading="lazy" style="width:100%;height:180px;object-fit:cover;display:block;" onerror="this.onerror=null;this.style.display='none';">`
           : `<div class="food-img-placeholder" style="background:${f.bg}">${f.emoji}</div>`
         }
       </div>
