@@ -145,8 +145,8 @@ function img(src, alt, cls = '') {
   return `<img class="${cls}" src="${src}" alt="${alt}" loading="lazy" onerror="this.onerror=null;this.style.display='none';" />`;
 }
 
-// Wikipedia thumbnail helper — uses the REST API which is CORS-accessible
-// We load images lazily via fetch from the Wikipedia API
+// Wikipedia thumbnail helper — busca via API e proxeia pelo wsrv.nl
+// wsrv.nl contorna o bloqueio 429 do Wikimedia
 async function getWikiThumb(title, size = 200) {
   try {
     const url = `https://en.wikipedia.org/w/api.php?action=query&titles=${encodeURIComponent(title)}&prop=pageimages&format=json&pithumbsize=${size}&origin=*`;
@@ -154,7 +154,9 @@ async function getWikiThumb(title, size = 200) {
     const data = await res.json();
     const pages = data.query.pages;
     const page = pages[Object.keys(pages)[0]];
-    return page.thumbnail ? page.thumbnail.source : null;
+    if (!page.thumbnail) return null;
+    const imgUrl = encodeURIComponent(page.thumbnail.source);
+    return `https://wsrv.nl/?url=${imgUrl}&w=${size}&h=${size}&fit=cover&we`;
   } catch { return null; }
 }
 
