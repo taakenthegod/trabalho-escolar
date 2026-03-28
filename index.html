@@ -8,6 +8,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <script>
+    (function() {
+      function hideLoader() {
+        var l = document.getElementById('loader');
+        if (l) l.classList.add('hidden');
+      }
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(hideLoader, 1200);
+      });
+      setTimeout(hideLoader, 2500);
+      window.addEventListener('error', function() {
+        setTimeout(hideLoader, 500);
+      }, true);
+    })();
+  </script>
 </head>
 <body>
 

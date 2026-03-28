@@ -1,20 +1,7 @@
 // ============================================================
 //  MUNDOS ALÉM DO HORIZONTE — script.js
 // ============================================================
-
-// ---- LOADER ----
-// Usa DOMContentLoaded + timeout fixo para não travar aguardando imagens externas
-document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => {
-    const loader = document.getElementById('loader');
-    if (loader) loader.classList.add('hidden');
-  }, 1000);
-});
-// Segurança extra: garante que o loader some mesmo se DOMContentLoaded já passou
-setTimeout(() => {
-  const loader = document.getElementById('loader');
-  if (loader) loader.classList.add('hidden');
-}, 2000);
+// Loader controlado pelo script inline no <head> do index.html
 
 // ---- NAVBAR ----
 const navbar = document.getElementById('navbar');
