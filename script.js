@@ -188,7 +188,7 @@ const australiaFamous = [
   { rank:1, name:'Cate Blanchett', tag:'Atriz', wiki:'Cate Blanchett', emoji:'🎭', desc:'Natural de Melbourne, vencedora de dois Oscar. Conhecida por Senhor dos Anéis, Blue Jasmine e Tár.' },
   { rank:2, name:'Hugh Jackman', tag:'Ator', wiki:'Hugh Jackman', emoji:'🎬', desc:'Nascido em Sydney. Mundialmente famoso como Wolverine. Brilha também no teatro musical — apresentou os Tony Awards.' },
   { rank:3, name:'Steve Irwin', tag:'Naturalista / Apresentador', wiki:'Steve Irwin', emoji:'🐊', desc:'O "Caçador de Crocodilos". Tornou-se símbolo da Austrália pelo amor à vida selvagem. Morreu em 2006 pela ferroada de uma arraia.' },
-  { rank:4, name:'Kylie Minogue', tag:'Cantora', wiki:'Kylie Minogue', emoji:'🎵', desc:'A "Princesa do Pop" australiana. "Can't Get You Out of My Head" é um dos maiores hits dos anos 2000.' },
+  { rank:4, name:'Kylie Minogue', tag:'Cantora', wiki:'Kylie Minogue', emoji:'🎵', desc:'A "Princesa do Pop" australiana. "Can\'t Get You Out of My Head" é um dos maiores hits dos anos 2000.' },
   { rank:5, name:'Nicole Kidman', tag:'Atriz', wiki:'Nicole Kidman', emoji:'🌟', desc:'Criada em Sydney. Oscar por "The Hours" (2003). Uma das atrizes mais versáteis de Hollywood por mais de 40 anos.' },
   { rank:6, name:'Rupert Murdoch', tag:'Magnata da mídia', wiki:'Rupert Murdoch', emoji:'📰', desc:'Fundou o império Fox News e News Corp. Um dos homens mais influentes da mídia mundial por décadas.' },
   { rank:7, name:'Geoffrey Rush', tag:'Ator', wiki:'Geoffrey Rush', emoji:'🎭', desc:'Um dos poucos atores a ganhar Oscar, Emmy, Tony e Grammy (EGOT). Famoso por Shine, Piratas do Caribe e The King\'s Speech.' },
@@ -294,13 +294,13 @@ function renderAnimals(containerId, animals) {
   animals.forEach(a => {
     const card = document.createElement('div');
     card.className = 'animal-card visible';
-    card.innerHTML = \`
+    card.innerHTML = `
       <div class="animal-img-placeholder" data-id="aph-\${containerId}-\${a.name}">\${a.emoji}</div>
       <div class="animal-info">
         <h4>\${a.name}</h4>
         <p>\${a.desc}</p>
       </div>
-    \`;
+    `;
     container.appendChild(card);
     getWikiThumb(a.wiki, 300).then(src => {
       if (!src) return;
@@ -321,7 +321,7 @@ function renderFood(containerId, foods) {
   foods.forEach(f => {
     const card = document.createElement('div');
     card.className = 'food-card visible';
-    card.innerHTML = \`
+    card.innerHTML = `
       <div class="food-img-wrap">
         <div class="food-img-placeholder" style="background:\${f.bg}">\${f.emoji}</div>
       </div>
@@ -329,7 +329,7 @@ function renderFood(containerId, foods) {
         <h4>\${f.name}</h4>
         <p>\${f.desc}</p>
       </div>
-    \`;
+    `;
     container.appendChild(card);
     if (f.img) {
       const imgEl = document.createElement('img');
@@ -388,7 +388,7 @@ function renderFamousAfrica(id) {
   africaFamous.forEach(p => {
     const card = document.createElement('div');
     card.className = 'famous-card visible';
-    card.innerHTML = \`
+    card.innerHTML = `
       <div class="famous-photo-wrap">
         <div class="famous-photo-placeholder">\${p.emoji}</div>
         <div class="famous-rank-badge">\${String(p.rank).padStart(2,'0')}</div>
@@ -398,7 +398,7 @@ function renderFamousAfrica(id) {
         <span class="famous-tag">\${p.tag}</span>
         <p>\${p.desc}</p>
       </div>
-    \`;
+    `;
     container.appendChild(card);
     getWikiThumb(p.wiki, 200).then(src => {
       if (!src) return;
@@ -419,7 +419,7 @@ function renderFamousAu(id) {
   australiaFamous.forEach(p => {
     const card = document.createElement('div');
     card.className = 'famous-card au-famous visible';
-    card.innerHTML = \`
+    card.innerHTML = `
       <div class="famous-photo-wrap">
         <div class="famous-photo-placeholder">\${p.emoji}</div>
         <div class="famous-rank-badge">\${String(p.rank).padStart(2,'0')}</div>
@@ -429,7 +429,7 @@ function renderFamousAu(id) {
         <span class="famous-tag au-tag">\${p.tag}</span>
         <p>\${p.desc}</p>
       </div>
-    \`;
+    `;
     container.appendChild(card);
     getWikiThumb(p.wiki, 200).then(src => {
       if (!src) return;
@@ -450,7 +450,7 @@ function renderFamousNz(id) {
   nzFamous.forEach(p => {
     const card = document.createElement('div');
     card.className = 'famous-card nz-famous visible';
-    card.innerHTML = \`
+    card.innerHTML = `
       <div class="famous-photo-wrap">
         <div class="famous-photo-placeholder">\${p.emoji}</div>
         <div class="famous-rank-badge">\${String(p.rank).padStart(2,'0')}</div>
@@ -460,7 +460,7 @@ function renderFamousNz(id) {
         <span class="famous-tag nz-tag">\${p.tag}</span>
         <p>\${p.desc}</p>
       </div>
-    \`;
+    `;
     container.appendChild(card);
     getWikiThumb(p.wiki, 200).then(src => {
       if (!src) return;
