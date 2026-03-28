@@ -295,10 +295,10 @@ function renderAnimals(containerId, animals) {
     const card = document.createElement('div');
     card.className = 'animal-card visible';
     card.innerHTML = `
-      <div class="animal-img-placeholder" data-id="aph-\${containerId}-\${a.name}">\${a.emoji}</div>
+      <div class="animal-img-placeholder" data-id="aph-${containerId}-${a.name}">${a.emoji}</div>
       <div class="animal-info">
-        <h4>\${a.name}</h4>
-        <p>\${a.desc}</p>
+        <h4>${a.name}</h4>
+        <p>${a.desc}</p>
       </div>
     `;
     container.appendChild(card);
@@ -323,11 +323,11 @@ function renderFood(containerId, foods) {
     card.className = 'food-card visible';
     card.innerHTML = `
       <div class="food-img-wrap">
-        <div class="food-img-placeholder" style="background:\${f.bg}">\${f.emoji}</div>
+        <div class="food-img-placeholder" style="background:${f.bg}">${f.emoji}</div>
       </div>
       <div class="food-info">
-        <h4>\${f.name}</h4>
-        <p>\${f.desc}</p>
+        <h4>${f.name}</h4>
+        <p>${f.desc}</p>
       </div>
     `;
     container.appendChild(card);
@@ -390,13 +390,13 @@ function renderFamousAfrica(id) {
     card.className = 'famous-card visible';
     card.innerHTML = `
       <div class="famous-photo-wrap">
-        <div class="famous-photo-placeholder">\${p.emoji}</div>
-        <div class="famous-rank-badge">\${String(p.rank).padStart(2,'0')}</div>
+        <div class="famous-photo-placeholder">${p.emoji}</div>
+        <div class="famous-rank-badge">${String(p.rank).padStart(2,'0')}</div>
       </div>
       <div class="famous-info">
-        <h4>\${p.name}</h4>
-        <span class="famous-tag">\${p.tag}</span>
-        <p>\${p.desc}</p>
+        <h4>${p.name}</h4>
+        <span class="famous-tag">${p.tag}</span>
+        <p>${p.desc}</p>
       </div>
     `;
     container.appendChild(card);
@@ -421,13 +421,13 @@ function renderFamousAu(id) {
     card.className = 'famous-card au-famous visible';
     card.innerHTML = `
       <div class="famous-photo-wrap">
-        <div class="famous-photo-placeholder">\${p.emoji}</div>
-        <div class="famous-rank-badge">\${String(p.rank).padStart(2,'0')}</div>
+        <div class="famous-photo-placeholder">${p.emoji}</div>
+        <div class="famous-rank-badge">${String(p.rank).padStart(2,'0')}</div>
       </div>
       <div class="famous-info">
-        <h4>\${p.name}</h4>
-        <span class="famous-tag au-tag">\${p.tag}</span>
-        <p>\${p.desc}</p>
+        <h4>${p.name}</h4>
+        <span class="famous-tag au-tag">${p.tag}</span>
+        <p>${p.desc}</p>
       </div>
     `;
     container.appendChild(card);
@@ -452,13 +452,13 @@ function renderFamousNz(id) {
     card.className = 'famous-card nz-famous visible';
     card.innerHTML = `
       <div class="famous-photo-wrap">
-        <div class="famous-photo-placeholder">\${p.emoji}</div>
-        <div class="famous-rank-badge">\${String(p.rank).padStart(2,'0')}</div>
+        <div class="famous-photo-placeholder">${p.emoji}</div>
+        <div class="famous-rank-badge">${String(p.rank).padStart(2,'0')}</div>
       </div>
       <div class="famous-info">
-        <h4>\${p.name}</h4>
-        <span class="famous-tag nz-tag">\${p.tag}</span>
-        <p>\${p.desc}</p>
+        <h4>${p.name}</h4>
+        <span class="famous-tag nz-tag">${p.tag}</span>
+        <p>${p.desc}</p>
       </div>
     `;
     container.appendChild(card);
