@@ -260,30 +260,30 @@ const nzAnimals = [
 
 // ---- FOOD DATA ----
 const africaFood = [
-  { name:'Braai', emoji:'🥩', bg:'#8B4513', desc:'O churrasco sul-africano. Mais que comida — é um ritual social. Carne assada em lenha. Existe até o Dia Nacional do Braai (24 de setembro).', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Braaivleis.jpg/640px-Braaivleis.jpg' },
-  { name:'Bobotie', emoji:'🥧', bg:'#c9a227', desc:'Prato nacional: carne moída temperada com curry, coberta com creme de ovos e assada. Servido com arroz amarelo com passas.', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Bobotie.jpg/640px-Bobotie.jpg' },
-  { name:'Boerewors', emoji:'🌭', bg:'#5c3317', desc:'Linguiça artesanal enrolada em espiral. Para ser chamada de boerewors, deve ter pelo menos 90% de carne bovina — protegido por lei.', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Boerewors.jpg/640px-Boerewors.jpg' },
-  { name:'Chakalaka', emoji:'🥬', bg:'#2d6a4f', desc:'Relish apimentado de vegetais (cebola, tomate, pimentão, feijão). Originado nas townships, hoje é clássico nacional.', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Chakalaka.jpg/640px-Chakalaka.jpg' },
-  { name:'Bunny Chow', emoji:'🥙', bg:'#b5451b', desc:'Pão branco escavado e recheado com curry — criação da comunidade indiana de Durban nos anos 1940. Comida de rua icônica.', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Bunny_chow.jpg/640px-Bunny_chow.jpg' },
-  { name:'Biltong', emoji:'🥩', bg:'#6b3a2a', desc:'Carne seca temperada com especiarias — o "jerky" sul-africano. Feito de carne bovina, avestruz ou caça. Snack onipresente no país.', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Beef_biltong.jpg/640px-Beef_biltong.jpg' },
+  { name:'Braai', emoji:'🥩', bg:'#8B4513', desc:'O churrasco sul-africano. Mais que comida — é um ritual social. Carne assada em lenha. Existe até o Dia Nacional do Braai (24 de setembro).', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Braaivleis.jpg/640px-Braaivleis.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Bobotie', emoji:'🥧', bg:'#c9a227', desc:'Prato nacional: carne moída temperada com curry, coberta com creme de ovos e assada. Servido com arroz amarelo com passas.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Bobotie.jpg/640px-Bobotie.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Boerewors', emoji:'🌭', bg:'#5c3317', desc:'Linguiça artesanal enrolada em espiral. Para ser chamada de boerewors, deve ter pelo menos 90% de carne bovina — protegido por lei.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Boerewors.jpg/640px-Boerewors.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Chakalaka', emoji:'🥬', bg:'#2d6a4f', desc:'Relish apimentado de vegetais (cebola, tomate, pimentão, feijão). Originado nas townships, hoje é clássico nacional.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Chakalaka.jpg/640px-Chakalaka.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Bunny Chow', emoji:'🥙', bg:'#b5451b', desc:'Pão branco escavado e recheado com curry — criação da comunidade indiana de Durban nos anos 1940. Comida de rua icônica.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Bunny_chow.jpg/640px-Bunny_chow.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Biltong', emoji:'🥩', bg:'#6b3a2a', desc:'Carne seca temperada com especiarias — o "jerky" sul-africano. Feito de carne bovina, avestruz ou caça. Snack onipresente no país.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Beef_biltong.jpg/640px-Beef_biltong.jpg&w=400&h=200&fit=cover&we' },
 ];
 
 const australiaFood = [
-  { name:'Meat Pie', emoji:'🥧', bg:'#8B5E3C', desc:'O pastelão de carne com gravy é o prato nacional não oficial. Presente em todo estádio de críquete e futebol australiano.', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Meat_pie_with_sauce.jpg/640px-Meat_pie_with_sauce.jpg' },
-  { name:'Vegemite', emoji:'🫙', bg:'#2b2d42', desc:'Pasta escura de extrato de levedura — ícone cultural. Australianos crescem comendo no café da manhã. Estrangeiros frequentemente odeiam.', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Vegemite2.jpg/640px-Vegemite2.jpg' },
-  { name:'Pavlova', emoji:'🎂', bg:'#e9c46a', desc:'Merengue crocante por fora, macio por dentro, coberto com creme e frutas. A origem é disputada com a Nova Zelândia.', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Pavlova_dessert.jpg/640px-Pavlova_dessert.jpg' },
-  { name:'Tim Tam', emoji:'🍫', bg:'#3d1e0f', desc:'Biscoito de chocolate banhado em chocolate. O "Tim Tam Slam": morder as pontas e beber café através do biscoito — ritual sagrado.', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Tim_Tam_biscuits.jpg/640px-Tim_Tam_biscuits.jpg' },
-  { name:'Lamington', emoji:'🍰', bg:'#4a1f5e', desc:'Bolo de baunilha mergulhado em chocolate e coberto com coco ralado. Tão amado que tem seu próprio Dia Nacional (21 de julho).', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/LamingtonCake.jpg/640px-LamingtonCake.jpg' },
-  { name:'Barramundi', emoji:'🐟', bg:'#457b9d', desc:'Peixe nativo, apreciado grelhado ou em fritas. Seu nome vem da língua aborígene e significa "peixe de grande escama".', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Barramundi.jpg/640px-Barramundi.jpg' },
+  { name:'Meat Pie', emoji:'🥧', bg:'#8B5E3C', desc:'O pastelão de carne com gravy é o prato nacional não oficial. Presente em todo estádio de críquete e futebol australiano.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Meat_pie_with_sauce.jpg/640px-Meat_pie_with_sauce.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Vegemite', emoji:'🫙', bg:'#2b2d42', desc:'Pasta escura de extrato de levedura — ícone cultural. Australianos crescem comendo no café da manhã. Estrangeiros frequentemente odeiam.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Vegemite2.jpg/640px-Vegemite2.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Pavlova', emoji:'🎂', bg:'#e9c46a', desc:'Merengue crocante por fora, macio por dentro, coberto com creme e frutas. A origem é disputada com a Nova Zelândia.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Pavlova_dessert.jpg/640px-Pavlova_dessert.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Tim Tam', emoji:'🍫', bg:'#3d1e0f', desc:'Biscoito de chocolate banhado em chocolate. O "Tim Tam Slam": morder as pontas e beber café através do biscoito — ritual sagrado.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Tim_Tam_biscuits.jpg/640px-Tim_Tam_biscuits.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Lamington', emoji:'🍰', bg:'#4a1f5e', desc:'Bolo de baunilha mergulhado em chocolate e coberto com coco ralado. Tão amado que tem seu próprio Dia Nacional (21 de julho).', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/LamingtonCake.jpg/640px-LamingtonCake.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Barramundi', emoji:'🐟', bg:'#457b9d', desc:'Peixe nativo, apreciado grelhado ou em fritas. Seu nome vem da língua aborígene e significa "peixe de grande escama".', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Barramundi.jpg/640px-Barramundi.jpg&w=400&h=200&fit=cover&we' },
 ];
 
 const nzFood = [
-  { name:'Hangi', emoji:'🥘', bg:'#2b4570', desc:'Refeição Maori cozida em buraco na terra com pedras quentes. Frango, porco, batata-doce e vegetais cozinham horas embaixo da terra.', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Hangi.jpg/640px-Hangi.jpg' },
-  { name:'Pavlova (NZ reclama!)', emoji:'🎂', bg:'#e9c46a', desc:'Os neozelandeses têm documentos que comprovam a criação anterior à versão australiana. Debate acalorado que dura décadas.', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Pavlova_dessert.jpg/640px-Pavlova_dessert.jpg' },
-  { name:'Whitebait Fritter', emoji:'🥚', bg:'#774936', desc:'Omelete leve recheado com pequenos peixes brancos translúcidos. Iguaria tão apreciada que a temporada de pesca é rigorosamente controlada.', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Whitebait_fritters.jpg/640px-Whitebait_fritters.jpg' },
-  { name:'Kumara', emoji:'🍠', bg:'#e76f51', desc:'Batata-doce roxa trazida pelos Maori da Polinésia. O vegetal mais culturalmente significativo do país — aparece em cerimônias tradicionais.', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Ipomoea_batatas_006.JPG/640px-Ipomoea_batatas_006.JPG' },
-  { name:'Kiwifruit', emoji:'🥝', bg:'#588157', desc:'Originalmente "gooseberry chinês", rebatizado "kiwi" pelos neozelandeses. A NZ é um dos maiores produtores mundiais.', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kiwifruit_cross_section.jpg/640px-Kiwifruit_cross_section.jpg' },
-  { name:'Cordeiro Assado', emoji:'🍖', bg:'#d62828', desc:'A NZ é o maior exportador de carne ovina do mundo. O lamb roast dominical é tradição familiar desde os colonizadores britânicos.', img:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Roast_lamb.jpg/640px-Roast_lamb.jpg' },
+  { name:'Hangi', emoji:'🥘', bg:'#2b4570', desc:'Refeição Maori cozida em buraco na terra com pedras quentes. Frango, porco, batata-doce e vegetais cozinham horas embaixo da terra.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Hangi.jpg/640px-Hangi.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Pavlova (NZ reclama!)', emoji:'🎂', bg:'#e9c46a', desc:'Os neozelandeses têm documentos que comprovam a criação anterior à versão australiana. Debate acalorado que dura décadas.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Pavlova_dessert.jpg/640px-Pavlova_dessert.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Whitebait Fritter', emoji:'🥚', bg:'#774936', desc:'Omelete leve recheado com pequenos peixes brancos translúcidos. Iguaria tão apreciada que a temporada de pesca é rigorosamente controlada.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Whitebait_fritters.jpg/640px-Whitebait_fritters.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Kumara', emoji:'🍠', bg:'#e76f51', desc:'Batata-doce roxa trazida pelos Maori da Polinésia. O vegetal mais culturalmente significativo do país — aparece em cerimônias tradicionais.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Ipomoea_batatas_006.JPG/640px-Ipomoea_batatas_006.JPG&w=400&h=200&fit=cover&we' },
+  { name:'Kiwifruit', emoji:'🥝', bg:'#588157', desc:'Originalmente "gooseberry chinês", rebatizado "kiwi" pelos neozelandeses. A NZ é um dos maiores produtores mundiais.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kiwifruit_cross_section.jpg/640px-Kiwifruit_cross_section.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Cordeiro Assado', emoji:'🍖', bg:'#d62828', desc:'A NZ é o maior exportador de carne ovina do mundo. O lamb roast dominical é tradição familiar desde os colonizadores britânicos.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Roast_lamb.jpg/640px-Roast_lamb.jpg&w=400&h=200&fit=cover&we' },
 ];
 
 // ---- RENDER FUNCTIONS ----
@@ -291,32 +291,30 @@ const nzFood = [
 function renderAnimals(containerId, animals) {
   const container = document.getElementById(containerId);
   if (!container) return;
-  animals.forEach(async (a) => {
+  animals.forEach(a => {
     const card = document.createElement('div');
     card.className = 'animal-card visible';
     card.innerHTML = `
-      <div class="animal-img-placeholder" id="aph-${containerId}-${a.name}">${a.emoji}</div>
+      <div class="animal-img-placeholder">${a.emoji}</div>
       <div class="animal-info">
         <h4>${a.name}</h4>
         <p>${a.desc}</p>
       </div>
     `;
     container.appendChild(card);
-    ro.observe(card);
-    // Try to load Wikipedia image
-    const src = await getWikiThumb(a.wiki, 300);
-    if (src) {
-      const ph = document.getElementById(`aph-${containerId}-${a.name}`);
-      if (ph) {
-        const imgEl = document.createElement('img');
-        imgEl.className = 'animal-img';
-        imgEl.src = src;
-        imgEl.alt = a.name;
-        imgEl.loading = 'lazy';
-        imgEl.onerror = () => { imgEl.style.display='none'; };
-        ph.replaceWith(imgEl);
-      }
-    }
+    // Tenta carregar imagem em background, sem bloquear o card
+    getWikiThumb(a.wiki, 300).then(src => {
+      if (!src) return;
+      const ph = card.querySelector('.animal-img-placeholder');
+      if (!ph) return;
+      const imgEl = document.createElement('img');
+      imgEl.className = 'animal-img';
+      imgEl.src = src;
+      imgEl.alt = a.name;
+      imgEl.loading = 'lazy';
+      imgEl.onerror = () => imgEl.style.display = 'none';
+      ph.replaceWith(imgEl);
+    }).catch(() => {});
   });
 }
 
@@ -326,13 +324,10 @@ function renderFood(containerId, foods) {
   foods.forEach(f => {
     const card = document.createElement('div');
     card.className = 'food-card visible';
-    const hasImg = f.img;
+    // Sempre mostra o placeholder de cor+emoji primeiro
     card.innerHTML = `
       <div class="food-img-wrap">
-        ${hasImg
-          ? `<img src="${f.img}" alt="${f.name}" loading="lazy" style="width:100%;height:180px;object-fit:cover;display:block;" onerror="this.onerror=null;this.style.display='none';">`
-          : `<div class="food-img-placeholder" style="background:${f.bg}">${f.emoji}</div>`
-        }
+        <div class="food-img-placeholder" style="background:${f.bg};display:flex;align-items:center;justify-content:center;font-size:3rem;height:180px;">${f.emoji}</div>
       </div>
       <div class="food-info">
         <h4>${f.name}</h4>
@@ -340,7 +335,21 @@ function renderFood(containerId, foods) {
       </div>
     `;
     container.appendChild(card);
-    ro.observe(card);
+    // Tenta carregar imagem por cima do emoji, sem bloquear
+    if (f.img) {
+      const imgEl = document.createElement('img');
+      imgEl.src = f.img;
+      imgEl.alt = f.name;
+      imgEl.loading = 'lazy';
+      imgEl.style.cssText = 'width:100%;height:180px;object-fit:cover;display:none;';
+      imgEl.onload = () => {
+        imgEl.style.display = 'block';
+        const ph = card.querySelector('.food-img-placeholder');
+        if (ph) ph.style.display = 'none';
+      };
+      imgEl.onerror = () => {};
+      card.querySelector('.food-img-wrap').appendChild(imgEl);
+    }
   });
 }
 
@@ -349,7 +358,7 @@ function renderFamous(containerId, people, tagClass = '') {
   if (!container) return;
   people.forEach(async (p) => {
     const card = document.createElement('div');
-    card.className = `famous-card ${tagClass} reveal`;
+    card.className = `famous-card ${tagClass} visible`;
     card.innerHTML = `
       <div class="famous-photo-wrap">
         <div class="famous-photo-placeholder" id="fph-${containerId}-${p.rank}">${p.emoji}</div>
@@ -362,7 +371,6 @@ function renderFamous(containerId, people, tagClass = '') {
       </div>
     `;
     container.appendChild(card);
-    ro.observe(card);
     // Try Wikipedia image
     const src = await getWikiThumb(p.wiki, 200);
     if (src) {
@@ -384,12 +392,12 @@ function renderFamous(containerId, people, tagClass = '') {
 function renderFamousAfrica(id) {
   const container = document.getElementById(id);
   if (!container) return;
-  africaFamous.forEach(async (p) => {
+  africaFamous.forEach(p => {
     const card = document.createElement('div');
     card.className = 'famous-card visible';
     card.innerHTML = `
       <div class="famous-photo-wrap">
-        <div class="famous-photo-placeholder" id="fph-${id}-${p.rank}">${p.emoji}</div>
+        <div class="famous-photo-placeholder" style="display:flex;align-items:center;justify-content:center;font-size:2rem;width:90px;height:90px;border-radius:50%;background:var(--surface2);">${p.emoji}</div>
         <div class="famous-rank-badge">${String(p.rank).padStart(2,'0')}</div>
       </div>
       <div class="famous-info">
@@ -399,30 +407,28 @@ function renderFamousAfrica(id) {
       </div>
     `;
     container.appendChild(card);
-    ro.observe(card);
-    const src = await getWikiThumb(p.wiki, 200);
-    if (src) {
-      const ph = document.getElementById(`fph-${id}-${p.rank}`);
-      if (ph) {
-        const imgEl = document.createElement('img');
-        imgEl.className = 'famous-photo';
-        imgEl.src = src; imgEl.alt = p.name; imgEl.loading = 'lazy';
-        imgEl.onerror = () => imgEl.style.display='none';
-        ph.replaceWith(imgEl);
-      }
-    }
+    getWikiThumb(p.wiki, 200).then(src => {
+      if (!src) return;
+      const ph = card.querySelector('.famous-photo-placeholder');
+      if (!ph) return;
+      const imgEl = document.createElement('img');
+      imgEl.className = 'famous-photo';
+      imgEl.src = src; imgEl.alt = p.name; imgEl.loading = 'lazy';
+      imgEl.onerror = () => imgEl.style.display = 'none';
+      ph.replaceWith(imgEl);
+    }).catch(() => {});
   });
 }
 
 function renderFamousAu(id) {
   const container = document.getElementById(id);
   if (!container) return;
-  australiaFamous.forEach(async (p) => {
+  australiaFamous.forEach(p => {
     const card = document.createElement('div');
     card.className = 'famous-card au-famous visible';
     card.innerHTML = `
       <div class="famous-photo-wrap">
-        <div class="famous-photo-placeholder" id="fph-${id}-${p.rank}">${p.emoji}</div>
+        <div class="famous-photo-placeholder" style="display:flex;align-items:center;justify-content:center;font-size:2rem;width:90px;height:90px;border-radius:50%;background:var(--surface2);">${p.emoji}</div>
         <div class="famous-rank-badge">${String(p.rank).padStart(2,'0')}</div>
       </div>
       <div class="famous-info">
@@ -432,30 +438,28 @@ function renderFamousAu(id) {
       </div>
     `;
     container.appendChild(card);
-    ro.observe(card);
-    const src = await getWikiThumb(p.wiki, 200);
-    if (src) {
-      const ph = document.getElementById(`fph-${id}-${p.rank}`);
-      if (ph) {
-        const imgEl = document.createElement('img');
-        imgEl.className = 'famous-photo';
-        imgEl.src = src; imgEl.alt = p.name; imgEl.loading = 'lazy';
-        imgEl.onerror = () => imgEl.style.display='none';
-        ph.replaceWith(imgEl);
-      }
-    }
+    getWikiThumb(p.wiki, 200).then(src => {
+      if (!src) return;
+      const ph = card.querySelector('.famous-photo-placeholder');
+      if (!ph) return;
+      const imgEl = document.createElement('img');
+      imgEl.className = 'famous-photo';
+      imgEl.src = src; imgEl.alt = p.name; imgEl.loading = 'lazy';
+      imgEl.onerror = () => imgEl.style.display = 'none';
+      ph.replaceWith(imgEl);
+    }).catch(() => {});
   });
 }
 
 function renderFamousNz(id) {
   const container = document.getElementById(id);
   if (!container) return;
-  nzFamous.forEach(async (p) => {
+  nzFamous.forEach(p => {
     const card = document.createElement('div');
     card.className = 'famous-card nz-famous visible';
     card.innerHTML = `
       <div class="famous-photo-wrap">
-        <div class="famous-photo-placeholder" id="fph-${id}-${p.rank}">${p.emoji}</div>
+        <div class="famous-photo-placeholder" style="display:flex;align-items:center;justify-content:center;font-size:2rem;width:90px;height:90px;border-radius:50%;background:var(--surface2);">${p.emoji}</div>
         <div class="famous-rank-badge">${String(p.rank).padStart(2,'0')}</div>
       </div>
       <div class="famous-info">
@@ -465,18 +469,16 @@ function renderFamousNz(id) {
       </div>
     `;
     container.appendChild(card);
-    ro.observe(card);
-    const src = await getWikiThumb(p.wiki, 200);
-    if (src) {
-      const ph = document.getElementById(`fph-${id}-${p.rank}`);
-      if (ph) {
-        const imgEl = document.createElement('img');
-        imgEl.className = 'famous-photo';
-        imgEl.src = src; imgEl.alt = p.name; imgEl.loading = 'lazy';
-        imgEl.onerror = () => imgEl.style.display='none';
-        ph.replaceWith(imgEl);
-      }
-    }
+    getWikiThumb(p.wiki, 200).then(src => {
+      if (!src) return;
+      const ph = card.querySelector('.famous-photo-placeholder');
+      if (!ph) return;
+      const imgEl = document.createElement('img');
+      imgEl.className = 'famous-photo';
+      imgEl.src = src; imgEl.alt = p.name; imgEl.loading = 'lazy';
+      imgEl.onerror = () => imgEl.style.display = 'none';
+      ph.replaceWith(imgEl);
+    }).catch(() => {});
   });
 }
 
