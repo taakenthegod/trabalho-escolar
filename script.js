@@ -291,7 +291,7 @@ function renderAnimals(containerId, animals) {
   if (!container) return;
   animals.forEach(async (a) => {
     const card = document.createElement('div');
-    card.className = 'animal-card reveal';
+    card.className = 'animal-card visible';
     card.innerHTML = `
       <div class="animal-img-placeholder" id="aph-${containerId}-${a.name}">${a.emoji}</div>
       <div class="animal-info">
@@ -323,7 +323,7 @@ function renderFood(containerId, foods) {
   if (!container) return;
   foods.forEach(f => {
     const card = document.createElement('div');
-    card.className = 'food-card reveal';
+    card.className = 'food-card visible';
     const hasImg = f.img;
     card.innerHTML = `
       <div class="food-img-wrap">
@@ -384,7 +384,7 @@ function renderFamousAfrica(id) {
   if (!container) return;
   africaFamous.forEach(async (p) => {
     const card = document.createElement('div');
-    card.className = 'famous-card reveal';
+    card.className = 'famous-card visible';
     card.innerHTML = `
       <div class="famous-photo-wrap">
         <div class="famous-photo-placeholder" id="fph-${id}-${p.rank}">${p.emoji}</div>
@@ -417,7 +417,7 @@ function renderFamousAu(id) {
   if (!container) return;
   australiaFamous.forEach(async (p) => {
     const card = document.createElement('div');
-    card.className = 'famous-card au-famous reveal';
+    card.className = 'famous-card au-famous visible';
     card.innerHTML = `
       <div class="famous-photo-wrap">
         <div class="famous-photo-placeholder" id="fph-${id}-${p.rank}">${p.emoji}</div>
@@ -450,7 +450,7 @@ function renderFamousNz(id) {
   if (!container) return;
   nzFamous.forEach(async (p) => {
     const card = document.createElement('div');
-    card.className = 'famous-card nz-famous reveal';
+    card.className = 'famous-card nz-famous visible';
     card.innerHTML = `
       <div class="famous-photo-wrap">
         <div class="famous-photo-placeholder" id="fph-${id}-${p.rank}">${p.emoji}</div>
