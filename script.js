@@ -171,17 +171,17 @@ const africaFamous = [
   { rank:7, name:'Miriam Makeba', tag:'Cantora / Ativista', wiki:'Miriam Makeba', emoji:'🎵', desc:'"Mama Africa". Exilada por décadas por se opor ao apartheid. Seu Pata Pata é um dos grandes clássicos da música africana.' },
   { rank:8, name:'J.M. Coetzee', tag:'Escritor', wiki:'J. M. Coetzee', emoji:'📚', desc:'Nobel de Literatura em 2003. Suas obras como "Desonra" exploram as tensões raciais e morais do pós-apartheid.' },
   { rank:9, name:'Caster Semenya', tag:'Atleta', wiki:'Caster Semenya', emoji:'🏃🏿', desc:'Campeã olímpica de 800m (2016). Sua carreira tornou-se centro de debate global sobre gênero, identidade e regulação esportiva.' },
-  { rank:10, name:'Steve Biko', tag:'Ativista / Filósofo', wiki:'Steve Biko', emoji:'✊🏿', desc:'Fundador do movimento da Consciência Negra. Morto sob custódia policial em 1977. Mártir da resistência ao apartheid.' },
+  { rank:10, name:'Steve Biko', localImg:'artistas-south_africa/Steve-Biko.jpeg', tag:'Ativista / Filósofo', wiki:'Steve Biko', emoji:'✊🏿', desc:'Fundador do movimento da Consciência Negra. Morto sob custódia policial em 1977. Mártir da resistência ao apartheid.' },
   { rank:11, name:'Shaka Zulu', tag:'Rei / Guerreiro', wiki:'Shaka', emoji:'🛡️', desc:'Rei Zulu que criou um dos maiores impérios da África subsaariana no séc. XIX. Revolucionou as táticas de guerra africanas.' },
-  { rank:12, name:'Winnie Mandela', tag:'Ativista / Política', wiki:'Winnie Madikizela-Mandela', emoji:'💪🏿', desc:'Rosto do movimento anti-apartheid enquanto Nelson estava preso. Figura controversa e icônica da luta pela liberdade.' },
+  { rank:12, name:'Winnie Mandela', localImg:'artistas-south_africa/Winnie-Mandela.jpeg', tag:'Ativista / Política', wiki:'Winnie Madikizela-Mandela', emoji:'💪🏿', desc:'Rosto do movimento anti-apartheid enquanto Nelson estava preso. Figura controversa e icônica da luta pela liberdade.' },
   { rank:13, name:'F.W. de Klerk', tag:'Político', wiki:'F. W. de Klerk', emoji:'🕊️', desc:'Último presidente branco da África do Sul. Negociou o fim do apartheid com Mandela. Nobel da Paz em 1993 (compartilhado).' },
-  { rank:14, name:'Black Coffee', tag:'DJ / Produtor', wiki:'Black Coffee (musician)', emoji:'🎧', desc:'DJ e produtor que levou o Amapiano e o house africano para os maiores festivais do mundo. Grammy Internacional em 2022.' },
+  { rank:14, name:'Black Coffee', tag:'DJ / Produtor', wiki:'Black Coffee (musician)', emoji:'🎧', localImg:'artistas-south_africa/Black-Coffee.jpeg', desc:'DJ e produtor que levou o Amapiano e o house africano para os maiores festivais do mundo. Grammy Internacional em 2022.' },
   { rank:15, name:'Christiaan de Wet', tag:'General / Herói Bôer', wiki:'Christiaan de Wet', emoji:'⚔️', desc:'General Bôer lendário, nunca capturado pelos britânicos durante as guerras Anglo-Bôeres. Símbolo da resistência Afrikaner.' },
   { rank:16, name:'Albert Luthuli', tag:'Ativista / Político', wiki:'Albert Luthuli', emoji:'🕊️', desc:'Primeiro africano e primeiro sul-africano a ganhar o Nobel da Paz (1960). Presidente do Congresso Nacional Africano por anos.' },
   { rank:17, name:'Ladysmith Black Mambazo', tag:'Grupo Musical', wiki:'Ladysmith Black Mambazo', emoji:'🎶', desc:'Grupo coral sul-africano de isicathamiya. Ficaram famosos após colaborar com Paul Simon no álbum Graceland (1986). 5 Grammys.' },
   { rank:18, name:'Gary Player', tag:'Golfista', wiki:'Gary Player', emoji:'⛳', desc:'Um dos maiores golfistas de todos os tempos. Único não-americano a vencer os quatro Grand Slams do golfe. Venceu 165 torneios.' },
-  { rank:19, name:'Rassie Erasmus', tag:'Técnico de Rugby', wiki:'Rassie Erasmus', emoji:'🏉', desc:'Técnico dos Springboks que os levou ao tricampeonato mundial (2019 e 2023). Controverso e revolucionário na liderança esportiva.' },
-  { rank:20, name:'Brenda Fassie', tag:'Cantora', wiki:'Brenda Fassie', emoji:'🎤', desc:'Conhecida como "A Madonna da África". Ícone do pop sul-africano cujas músicas ecoaram o fim do apartheid. Morreu em 2004 aos 39 anos.' },
+  { rank:19, name:'Rassie Erasmus', localImg:'artistas-south_africa/Rassie-Erasmus.jpeg', tag:'Técnico de Rugby', wiki:'Rassie Erasmus', emoji:'🏉', desc:'Técnico dos Springboks que os levou ao tricampeonato mundial (2019 e 2023). Controverso e revolucionário na liderança esportiva.' },
+  { rank:20, name:'Brenda Fassie', localImg:'artistas-south_africa/Brenda-Fassie.jpeg', tag:'Cantora', wiki:'Brenda Fassie', emoji:'🎤', desc:'Conhecida como "A Madonna da África". Ícone do pop sul-africano cujas músicas ecoaram o fim do apartheid. Morreu em 2004 aos 39 anos.' },
 ];
 
 const australiaFamous = [
@@ -253,9 +253,9 @@ const nzAnimals = [
   { name: 'Kiwi', emoji: '🥝', wiki: 'Kiwi_(bird)', desc: 'Ave nacional. Não voa, tem narinas na ponta do bico e cheira o alimento no chão. Criticamente ameaçada de extinção.' },
   { name: 'Tuatara', emoji: '🦎', wiki: 'Tuatara', desc: 'Réptil que existe há 250 milhões de anos — praticamente inalterado desde a era dos dinossauros. Exclusivo da Nova Zelândia.' },
   { name: 'Kea', emoji: '🦜', wiki: 'Kea', desc: 'O único papagaio alpino do mundo. Extremamente inteligente e curioso. Conhecido por desmontar carros e roubar objetos de turistas.' },
-  { name: 'Kakapo', emoji: '🦚', wiki: 'Kakapo', desc: 'O papagaio mais gordo do mundo — e incapaz de voar. Criticamente ameaçado com apenas ~250 indivíduos vivos.' },
+  { name: 'Kakapo', emoji: '🦚', wiki: 'Kakapo', localImg: 'animals-new_zeland/kakapo.jpeg', desc: 'O papagaio mais gordo do mundo — e incapaz de voar. Criticamente ameaçado com apenas ~250 indivíduos vivos.' },
   { name: 'Baleia Franca', emoji: '🐋', wiki: 'Southern_right_whale', desc: 'Migra anualmente para as costas da NZ para se reproduzir. O local de observação de baleias de Kaikoura é um dos melhores do mundo.' },
-  { name: 'Golfinho Hector', emoji: '🐬', wiki: "Hector's_dolphin", desc: 'O menor e mais raro golfinho do mundo. Só existe nas águas da Nova Zelândia. Menos de 15.000 indivíduos restantes.' },
+  { name: 'Golfinho Hector', emoji: '🐬', wiki: "Hector's_dolphin", localImg: 'animals-new_zeland/dolphin-hector.jpeg', desc: 'O menor e mais raro golfinho do mundo. Só existe nas águas da Nova Zelândia. Menos de 15.000 indivíduos restantes.' },
 ];
 
 // ---- FOOD DATA ----
@@ -295,23 +295,24 @@ function renderAnimals(containerId, animals) {
     const card = document.createElement('div');
     card.className = 'animal-card visible';
     card.innerHTML = `
-      <div class="animal-img-placeholder" data-id="aph-${containerId}-${a.name}">${a.emoji}</div>
+      <div class="animal-img-placeholder">${a.emoji}</div>
       <div class="animal-info">
         <h4>${a.name}</h4>
         <p>${a.desc}</p>
       </div>
     `;
     container.appendChild(card);
-    getWikiThumb(a.wiki, 300).then(src => {
-      if (!src) return;
-      const ph = card.querySelector('.animal-img-placeholder');
-      if (!ph) return;
+    const ph = card.querySelector('.animal-img-placeholder');
+    const loadImg = (src) => {
+      if (!src || !ph) return;
       const imgEl = document.createElement('img');
       imgEl.className = 'animal-img';
       imgEl.src = src; imgEl.alt = a.name; imgEl.loading = 'lazy';
       imgEl.onerror = () => imgEl.style.display = 'none';
       ph.replaceWith(imgEl);
-    }).catch(() => {});
+    };
+    if (a.localImg) { loadImg(a.localImg); return; }
+    getWikiThumb(a.wiki, 300).then(loadImg).catch(() => {});
   });
 }
 
@@ -400,16 +401,17 @@ function renderFamousAfrica(id) {
       </div>
     `;
     container.appendChild(card);
-    getWikiThumb(p.wiki, 200).then(src => {
-      if (!src) return;
-      const ph = card.querySelector('.famous-photo-placeholder');
-      if (!ph) return;
+    const ph = card.querySelector('.famous-photo-placeholder');
+    const loadImg = (src) => {
+      if (!src || !ph) return;
       const imgEl = document.createElement('img');
       imgEl.className = 'famous-photo';
       imgEl.src = src; imgEl.alt = p.name; imgEl.loading = 'lazy';
       imgEl.onerror = () => imgEl.style.display = 'none';
       ph.replaceWith(imgEl);
-    }).catch(() => {});
+    };
+    if (p.localImg) { loadImg(p.localImg); return; }
+    getWikiThumb(p.wiki, 200).then(loadImg).catch(() => {});
   });
 }
 
