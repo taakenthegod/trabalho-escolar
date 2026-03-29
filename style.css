@@ -415,7 +415,7 @@ body{
 /* ---- BLACK COFFEE ---- */
 .blackcoffee-block{margin:4rem 0}
 .blackcoffee-card{
-  background:linear-gradient(135deg,#0a0908 0%,#1a0e06 50%,#0c0d18 100%);
+  background:linear-gradient(135deg,#0a0908 0%,#1a0e06 50%,#ffffff 100%);
   border:1px solid #c8956c;border-radius:var(--radius);overflow:hidden;
   box-shadow:0 0 60px rgba(200,149,108,.1),0 0 120px rgba(200,149,108,.04);
 }
