@@ -535,3 +535,24 @@ footer{
   .animals-grid{grid-template-columns:1fr}
   .hero-title{font-size:3rem}
 }
+
+/* ---- SPOTIFY BUTTON ---- */
+.bc-spotify-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #1DB954;
+  color: #000;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-family: var(--font-body);
+  transition: transform .2s, box-shadow .2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+.bc-spotify-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(29,185,84,.4); }
+.bc-spotify-icon { font-size: 2rem; flex-shrink: 0; }
+.bc-spotify-text { display: flex; flex-direction: column; gap: .2rem; }
+.bc-spotify-text strong { font-size: 1.1rem; }
+.bc-spotify-text small { font-size: .85rem; opacity: .8; }
