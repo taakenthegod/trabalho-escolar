@@ -260,30 +260,30 @@ const nzAnimals = [
 
 // ---- FOOD DATA ----
 const africaFood = [
-  { name:'Braai', emoji:'', bg:'#8B4513', desc:'O churrasco sul-africano. Mais que comida — é um ritual social. Carne assada em lenha. Existe até o Dia Nacional do Braai (24 de setembro).', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Braaivleis.jpg/640px-Braaivleis.jpg&w=400&h=200&fit=cover&we' },
-  { name:'Bobotie', emoji:'', bg:'#c9a227', desc:'Prato nacional: carne moída temperada com curry, coberta com creme de ovos e assada. Servido com arroz amarelo com passas.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Bobotie.jpg/640px-Bobotie.jpg&w=400&h=200&fit=cover&we' },
-  { name:'Boerewors', emoji:'', bg:'#5c3317', desc:'Linguiça artesanal enrolada em espiral. Para ser chamada de boerewors, deve ter pelo menos 90% de carne bovina — protegido por lei.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Boerewors.jpg/640px-Boerewors.jpg&w=400&h=200&fit=cover&we' },
-  { name:'Chakalaka', emoji:'', bg:'#2d6a4f', desc:'Relish apimentado de vegetais (cebola, tomate, pimentão, feijão). Originado nas townships, hoje é clássico nacional.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Chakalaka.jpg/640px-Chakalaka.jpg&w=400&h=200&fit=cover&we' },
-  { name:'Bunny Chow', emoji:'', bg:'#b5451b', desc:'Pão branco escavado e recheado com curry — criação da comunidade indiana de Durban nos anos 1940. Comida de rua icônica.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Bunny_chow.jpg/640px-Bunny_chow.jpg&w=400&h=200&fit=cover&we' },
-  { name:'Biltong', emoji:'', bg:'#6b3a2a', desc:'Carne seca temperada com especiarias — o "jerky" sul-africano. Feito de carne bovina, avestruz ou caça. Snack onipresente no país.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Beef_biltong.jpg/640px-Beef_biltong.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Braai', emoji:'', bg:'#8B4513', desc:'O churrasco sul-africano. Mais que comida — é um ritual social. Carne assada em lenha. Existe até o Dia Nacional do Braai (24 de setembro).', img:'south_africa/pratos_tipicos/braai.webp' },
+  { name:'Bobotie', emoji:'', bg:'#c9a227', desc:'Prato nacional: carne moída temperada com curry, coberta com creme de ovos e assada. Servido com arroz amarelo com passas.', img:'south_africa/pratos_tipicos/sul-bobtie-1200x675.webp' },
+  { name:'Boerewors', emoji:'', bg:'#5c3317', desc:'Linguiça artesanal enrolada em espiral. Para ser chamada de boerewors, deve ter pelo menos 90% de carne bovina — protegido por lei.', img:'south_africa/pratos_tipicos/boerewors-1200x675.webp' },
+  { name:'Chakalaka', emoji:'', bg:'#2d6a4f', desc:'Relish apimentado de vegetais (cebola, tomate, pimentão, feijão). Originado nas townships, hoje é clássico nacional.', img:'south_africa/pratos_tipicos/chakalaka-1200x675.webp' },
+  { name:'Bunny Chow', emoji:'', bg:'#b5451b', desc:'Pão branco escavado e recheado com curry — criação da comunidade indiana de Durban nos anos 1940. Comida de rua icônica.', img:'south_africa/pratos_tipicos/bunny-chow-1200x675.webp' },
+  { name:'Biltong', emoji:'', bg:'#6b3a2a', desc:'Carne seca temperada com especiarias — o "jerky" sul-africano. Feito de carne bovina, avestruz ou caça. Snack onipresente no país.', img:'south_africa/pratos_tipicos/cbiltong-1200x675.webp' },
 ];
 
 const australiaFood = [
-  { name:'Meat Pie', emoji:'', bg:'#8B5E3C', desc:'O pastelão de carne com gravy é o prato nacional não oficial. Presente em todo estádio de críquete e futebol australiano.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Meat_pie_with_sauce.jpg/640px-Meat_pie_with_sauce.jpg&w=400&h=200&fit=cover&we' },
-  { name:'Vegemite', emoji:'', bg:'#2b2d42', desc:'Pasta escura de extrato de levedura — ícone cultural. Australianos crescem comendo no café da manhã. Estrangeiros frequentemente odeiam.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Vegemite2.jpg/640px-Vegemite2.jpg&w=400&h=200&fit=cover&we' },
-  { name:'Pavlova', emoji:'', bg:'#e9c46a', desc:'Merengue crocante por fora, macio por dentro, coberto com creme e frutas. A origem é disputada com a Nova Zelândia.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Pavlova_dessert.jpg/640px-Pavlova_dessert.jpg&w=400&h=200&fit=cover&we' },
-  { name:'Tim Tam', emoji:'', bg:'#3d1e0f', desc:'Biscoito de chocolate banhado em chocolate. O "Tim Tam Slam": morder as pontas e beber café através do biscoito — ritual sagrado.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Tim_Tam_biscuits.jpg/640px-Tim_Tam_biscuits.jpg&w=400&h=200&fit=cover&we' },
-  { name:'Lamington', emoji:'', bg:'#4a1f5e', desc:'Bolo de baunilha mergulhado em chocolate e coberto com coco ralado. Tão amado que tem seu próprio Dia Nacional (21 de julho).', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/LamingtonCake.jpg/640px-LamingtonCake.jpg&w=400&h=200&fit=cover&we' },
-  { name:'Barramundi', emoji:'', bg:'#457b9d', desc:'Peixe nativo, apreciado grelhado ou em fritas. Seu nome vem da língua aborígene e significa "peixe de grande escama".', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Barramundi.jpg/640px-Barramundi.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Meat Pie', emoji:'', bg:'#8B5E3C', desc:'O pastelão de carne com gravy é o prato nacional não oficial. Presente em todo estádio de críquete e futebol australiano.', img:'australia/pratos_tipicos/Meat-Pie-4x3.jpg' },
+  { name:'Vegemite', emoji:'', bg:'#2b2d42', desc:'Pasta escura de extrato de levedura — ícone cultural. Australianos crescem comendo no café da manhã. Estrangeiros frequentemente odeiam.', img:'australia/pratos_tipicos/vegemite-1024x667.jpg' },
+  { name:'Pavlova', emoji:'', bg:'#e9c46a', desc:'Merengue crocante por fora, macio por dentro, coberto com creme e frutas. A origem é disputada com a Nova Zelândia.', img:'australia/pratos_tipicos/PAVLOVA-25-S-01-500x500.webp' },
+  { name:'Tim Tam', emoji:'', bg:'#3d1e0f', desc:'Biscoito de chocolate banhado em chocolate. O "Tim Tam Slam": morder as pontas e beber café através do biscoito — ritual sagrado.', img:'australia/pratos_tipicos/Tim_Tams.jpg' },
+  { name:'Lamington', emoji:'', bg:'#4a1f5e', desc:'Bolo de baunilha mergulhado em chocolate e coberto com coco ralado. Tão amado que tem seu próprio Dia Nacional (21 de julho).', img:'australia/pratos_tipicos/LAMINGTON-LAYER-CAKE-25-S-01-500x500.jpg' },
+  { name:'Barramundi', emoji:'', bg:'#457b9d', desc:'Peixe nativo, apreciado grelhado ou em fritas. Seu nome vem da língua aborígene e significa "peixe de grande escama".', img:'australia/pratos_tipicos/Barramundi-swimming.webp' },
 ];
 
 const nzFood = [
-  { name:'Hangi', emoji:'', bg:'#2b4570', desc:'Refeição Maori cozida em buraco na terra com pedras quentes. Frango, porco, batata-doce e vegetais cozinham horas embaixo da terra.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Hangi.jpg/640px-Hangi.jpg&w=400&h=200&fit=cover&we' },
-  { name:'Pavlova (NZ reclama!)', emoji:'', bg:'#e9c46a', desc:'Os neozelandeses têm documentos que comprovam a criação anterior à versão australiana. Debate acalorado que dura décadas.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Pavlova_dessert.jpg/640px-Pavlova_dessert.jpg&w=400&h=200&fit=cover&we' },
-  { name:'Whitebait Fritter', emoji:'', bg:'#774936', desc:'Omelete leve recheado com pequenos peixes brancos translúcidos. Iguaria tão apreciada que a temporada de pesca é rigorosamente controlada.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Whitebait_fritters.jpg/640px-Whitebait_fritters.jpg&w=400&h=200&fit=cover&we' },
-  { name:'Kumara', emoji:'', bg:'#e76f51', desc:'Batata-doce roxa trazida pelos Maori da Polinésia. O vegetal mais culturalmente significativo do país — aparece em cerimônias tradicionais.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Ipomoea_batatas_006.JPG/640px-Ipomoea_batatas_006.JPG&w=400&h=200&fit=cover&we' },
-  { name:'Kiwifruit', emoji:'', bg:'#588157', desc:'Originalmente "gooseberry chinês", rebatizado "kiwi" pelos neozelandeses. A NZ é um dos maiores produtores mundiais.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kiwifruit_cross_section.jpg/640px-Kiwifruit_cross_section.jpg&w=400&h=200&fit=cover&we' },
-  { name:'Cordeiro Assado', emoji:'', bg:'#d62828', desc:'A NZ é o maior exportador de carne ovina do mundo. O lamb roast dominical é tradição familiar desde os colonizadores britânicos.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Roast_lamb.jpg/640px-Roast_lamb.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Hangi', emoji:'', bg:'#2b4570', desc:'Refeição Maori cozida em buraco na terra com pedras quentes. Frango, porco, batata-doce e vegetais cozinham horas embaixo da terra.', img:'new_zeland/pratos_tipicos/Hangi.jpg' },
+  { name:'Pavlova (NZ reclama!)', emoji:'', bg:'#e9c46a', desc:'Os neozelandeses têm documentos que comprovam a criação anterior à versão australiana. Debate acalorado que dura décadas.', img:'australia/pratos_tipicos/PAVLOVA-25-S-01-500x500.webp' },
+  { name:'Whitebait Fritter', emoji:'', bg:'#774936', desc:'Omelete leve recheado com pequenos peixes brancos translúcidos. Iguaria tão apreciada que a temporada de pesca é rigorosamente controlada.', img:'new_zeland/pratos_tipicos/Whitebait-take.webp' },
+  { name:'Kumara', emoji:'', bg:'#e76f51', desc:'Batata-doce roxa trazida pelos Maori da Polinésia. O vegetal mais culturalmente significativo do país — aparece em cerimônias tradicionais.', img:'new_zeland/pratos_tipicos/Kumara.jpg' },
+  { name:'Kiwifruit', emoji:'', bg:'#588157', desc:'Originalmente "gooseberry chinês", rebatizado "kiwi" pelos neozelandeses. A NZ é um dos maiores produtores mundiais.', img:'new_zeland/pratos_tipicos/Kiwi-fruit.webp' },
+  { name:'Cordeiro Assado', emoji:'', bg:'#d62828', desc:'A NZ é o maior exportador de carne ovina do mundo. O lamb roast dominical é tradição familiar desde os colonizadores britânicos.', img:'new_zeland/pratos_tipicos/Cordeiro-Assado.jpg' },
 ];
 
 // ---- RENDER FUNCTIONS ----
@@ -322,25 +322,17 @@ function renderFood(containerId, foods) {
   foods.forEach(f => {
     const card = document.createElement('div');
     card.className = 'food-card visible';
+    const imgHtml = f.img
+      ? `<img src="${f.img}" alt="${f.name}" loading="lazy" style="width:100%;height:160px;object-fit:cover;display:block;" onerror="this.style.display='none';" />`
+      : `<div class="food-img-placeholder" style="background:${f.bg}"></div>`;
     card.innerHTML = `
-      <div class="food-img-wrap">
-        <div class="food-img-placeholder" style="background:${f.bg}">${f.emoji}</div>
-      </div>
+      <div class="food-img-wrap">${imgHtml}</div>
       <div class="food-info">
         <h4>${f.name}</h4>
         <p>${f.desc}</p>
       </div>
     `;
     container.appendChild(card);
-    if (f.img) {
-      const ph = card.querySelector('.food-img-placeholder');
-      const imgEl = document.createElement('img');
-      imgEl.src = f.img; imgEl.alt = f.name; imgEl.loading = 'lazy';
-      imgEl.style.cssText = 'width:100%;height:160px;object-fit:cover;display:block;position:absolute;top:0;left:0;';
-      imgEl.onload = () => { if (ph) ph.style.display = 'none'; };
-      imgEl.onerror = () => { imgEl.style.display = 'none'; };
-      card.querySelector('.food-img-wrap').appendChild(imgEl);
-    }
   });
 }
 
