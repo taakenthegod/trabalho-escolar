@@ -171,17 +171,17 @@ const africaFamous = [
   { rank:7, name:'Miriam Makeba', tag:'Cantora / Ativista', wiki:'Miriam Makeba', emoji:'🎵', desc:'"Mama Africa". Exilada por décadas por se opor ao apartheid. Seu Pata Pata é um dos grandes clássicos da música africana.' },
   { rank:8, name:'J.M. Coetzee', tag:'Escritor', wiki:'J. M. Coetzee', emoji:'📚', desc:'Nobel de Literatura em 2003. Suas obras como "Desonra" exploram as tensões raciais e morais do pós-apartheid.' },
   { rank:9, name:'Caster Semenya', tag:'Atleta', wiki:'Caster Semenya', emoji:'🏃🏿', desc:'Campeã olímpica de 800m (2016). Sua carreira tornou-se centro de debate global sobre gênero, identidade e regulação esportiva.' },
-  { rank:10, name:'Steve Biko', localImg:'south_africa/artistas/Steve-Biko.jpeg', tag:'Ativista / Filósofo', wiki:'Steve Biko', emoji:'✊🏿', desc:'Fundador do movimento da Consciência Negra. Morto sob custódia policial em 1977. Mártir da resistência ao apartheid.' },
+  { rank:10, name:'Steve Biko', localImg:'artistas-south_africa/Steve-Biko.jpeg', tag:'Ativista / Filósofo', wiki:'Steve Biko', emoji:'✊🏿', desc:'Fundador do movimento da Consciência Negra. Morto sob custódia policial em 1977. Mártir da resistência ao apartheid.' },
   { rank:11, name:'Shaka Zulu', tag:'Rei / Guerreiro', wiki:'Shaka', emoji:'🛡️', desc:'Rei Zulu que criou um dos maiores impérios da África subsaariana no séc. XIX. Revolucionou as táticas de guerra africanas.' },
-  { rank:12, name:'Winnie Mandela', localImg:'south_africa/artistas/Winnie-Mandela.jpeg', tag:'Ativista / Política', wiki:'Winnie Madikizela-Mandela', emoji:'💪🏿', desc:'Rosto do movimento anti-apartheid enquanto Nelson estava preso. Figura controversa e icônica da luta pela liberdade.' },
+  { rank:12, name:'Winnie Mandela', localImg:'artistas-south_africa/Winnie-Mandela.jpeg', tag:'Ativista / Política', wiki:'Winnie Madikizela-Mandela', emoji:'💪🏿', desc:'Rosto do movimento anti-apartheid enquanto Nelson estava preso. Figura controversa e icônica da luta pela liberdade.' },
   { rank:13, name:'F.W. de Klerk', tag:'Político', wiki:'F. W. de Klerk', emoji:'🕊️', desc:'Último presidente branco da África do Sul. Negociou o fim do apartheid com Mandela. Nobel da Paz em 1993 (compartilhado).' },
-  { rank:14, name:'Black Coffee', tag:'DJ / Produtor', wiki:'Black Coffee (musician)', emoji:'🎧', localImg:'south_africa/artistas/Black-Coffee.jpeg', desc:'DJ e produtor que levou o Amapiano e o house africano para os maiores festivais do mundo. Grammy Internacional em 2022.' },
+  { rank:14, name:'Black Coffee', tag:'DJ / Produtor', wiki:'Black Coffee (musician)', emoji:'🎧', localImg:'artistas-south_africa/Black-Coffee.jpeg', desc:'DJ e produtor que levou o Amapiano e o house africano para os maiores festivais do mundo. Grammy Internacional em 2022.' },
   { rank:15, name:'Christiaan de Wet', tag:'General / Herói Bôer', wiki:'Christiaan de Wet', emoji:'⚔️', desc:'General Bôer lendário, nunca capturado pelos britânicos durante as guerras Anglo-Bôeres. Símbolo da resistência Afrikaner.' },
   { rank:16, name:'Albert Luthuli', tag:'Ativista / Político', wiki:'Albert Luthuli', emoji:'🕊️', desc:'Primeiro africano e primeiro sul-africano a ganhar o Nobel da Paz (1960). Presidente do Congresso Nacional Africano por anos.' },
   { rank:17, name:'Ladysmith Black Mambazo', tag:'Grupo Musical', wiki:'Ladysmith Black Mambazo', emoji:'🎶', desc:'Grupo coral sul-africano de isicathamiya. Ficaram famosos após colaborar com Paul Simon no álbum Graceland (1986). 5 Grammys.' },
   { rank:18, name:'Gary Player', tag:'Golfista', wiki:'Gary Player', emoji:'⛳', desc:'Um dos maiores golfistas de todos os tempos. Único não-americano a vencer os quatro Grand Slams do golfe. Venceu 165 torneios.' },
-  { rank:19, name:'Rassie Erasmus', localImg:'south_africa/artistas/Rassie-Erasmus.jpeg', tag:'Técnico de Rugby', wiki:'Rassie Erasmus', emoji:'🏉', desc:'Técnico dos Springboks que os levou ao tricampeonato mundial (2019 e 2023). Controverso e revolucionário na liderança esportiva.' },
-  { rank:20, name:'Brenda Fassie', localImg:'south_africa/artistas/Brenda-Fassie.jpeg', tag:'Cantora', wiki:'Brenda Fassie', emoji:'🎤', desc:'Conhecida como "A Madonna da África". Ícone do pop sul-africano cujas músicas ecoaram o fim do apartheid. Morreu em 2004 aos 39 anos.' },
+  { rank:19, name:'Rassie Erasmus', localImg:'artistas-south_africa/Rassie-Erasmus.jpeg', tag:'Técnico de Rugby', wiki:'Rassie Erasmus', emoji:'🏉', desc:'Técnico dos Springboks que os levou ao tricampeonato mundial (2019 e 2023). Controverso e revolucionário na liderança esportiva.' },
+  { rank:20, name:'Brenda Fassie', localImg:'artistas-south_africa/Brenda-Fassie.jpeg', tag:'Cantora', wiki:'Brenda Fassie', emoji:'🎤', desc:'Conhecida como "A Madonna da África". Ícone do pop sul-africano cujas músicas ecoaram o fim do apartheid. Morreu em 2004 aos 39 anos.' },
 ];
 
 const australiaFamous = [
@@ -241,7 +241,7 @@ const africaAnimals = [
 ];
 
 const australiaAnimals = [
-  { name: 'Canguru', emoji: '🦘', wiki: 'Red_kangaroo', localImg: 'australia/curiosidades/curiosidades-sobre-cangurus-na-australia-cover.webp', desc: 'Símbolo nacional. O maior marsupial do mundo. Um filhote nasce do tamanho de um feijão e completa o desenvolvimento na bolsa da mãe.' },
+  { name: 'Canguru', emoji: '🦘', wiki: 'Red_kangaroo', desc: 'Símbolo nacional. O maior marsupial do mundo. Um filhote nasce do tamanho de um feijão e completa o desenvolvimento na bolsa da mãe.' },
   { name: 'Coala', emoji: '🐨', wiki: 'Koala', desc: 'Dorme até 22 horas por dia para economizar energia digerindo folhas de eucalipto — que são tóxicas para outros animais.' },
   { name: 'Ornitorrinco', emoji: '🦆', wiki: 'Platypus', desc: 'Mamífero que bota ovos, tem bico de pato, rabo de castor e é um dos poucos mamíferos venenosos do mundo.' },
   { name: 'Tasmanian Devil', emoji: '😈', wiki: 'Tasmanian_devil', desc: 'O maior marsupial carnívoro vivo. Tem a mordida mais forte proporcional ao tamanho entre todos os mamíferos.' },
@@ -253,37 +253,37 @@ const nzAnimals = [
   { name: 'Kiwi', emoji: '🥝', wiki: 'Kiwi_(bird)', desc: 'Ave nacional. Não voa, tem narinas na ponta do bico e cheira o alimento no chão. Criticamente ameaçada de extinção.' },
   { name: 'Tuatara', emoji: '🦎', wiki: 'Tuatara', desc: 'Réptil que existe há 250 milhões de anos — praticamente inalterado desde a era dos dinossauros. Exclusivo da Nova Zelândia.' },
   { name: 'Kea', emoji: '🦜', wiki: 'Kea', desc: 'O único papagaio alpino do mundo. Extremamente inteligente e curioso. Conhecido por desmontar carros e roubar objetos de turistas.' },
-  { name: 'Kakapo', emoji: '🦚', wiki: 'Kakapo', localImg: 'new_zeland/animals/kakapo.jpeg', desc: 'O papagaio mais gordo do mundo — e incapaz de voar. Criticamente ameaçado com apenas ~250 indivíduos vivos.' },
+  { name: 'Kakapo', emoji: '🦚', wiki: 'Kakapo', localImg: 'animals-new_zeland/kakapo.jpeg', desc: 'O papagaio mais gordo do mundo — e incapaz de voar. Criticamente ameaçado com apenas ~250 indivíduos vivos.' },
   { name: 'Baleia Franca', emoji: '🐋', wiki: 'Southern_right_whale', desc: 'Migra anualmente para as costas da NZ para se reproduzir. O local de observação de baleias de Kaikoura é um dos melhores do mundo.' },
-  { name: 'Golfinho Hector', emoji: '🐬', wiki: "Hector's_dolphin", localImg: 'new_zeland/animals/dolphin-hector.jpeg', desc: 'O menor e mais raro golfinho do mundo. Só existe nas águas da Nova Zelândia. Menos de 15.000 indivíduos restantes.' },
+  { name: 'Golfinho Hector', emoji: '🐬', wiki: "Hector's_dolphin", localImg: 'animals-new_zeland/dolphin-hector.jpeg', desc: 'O menor e mais raro golfinho do mundo. Só existe nas águas da Nova Zelândia. Menos de 15.000 indivíduos restantes.' },
 ];
 
 // ---- FOOD DATA ----
 const africaFood = [
-  { name:'Braai', emoji:'🥩', bg:'#8B4513', desc:'O churrasco sul-africano. Mais que comida — é um ritual social. Carne assada em lenha. Existe até o Dia Nacional do Braai (24 de setembro).', img:'south_africa/pratos_tipicos/braai.webp' },
-  { name:'Bobotie', emoji:'🥧', bg:'#c9a227', desc:'Prato nacional: carne moída temperada com curry, coberta com creme de ovos e assada. Servido com arroz amarelo com passas.', img:'south_africa/pratos_tipicos/sul-bobtie-1200x675.webp' },
-  { name:'Boerewors', emoji:'🌭', bg:'#5c3317', desc:'Linguiça artesanal enrolada em espiral. Para ser chamada de boerewors, deve ter pelo menos 90% de carne bovina — protegido por lei.', img:'south_africa/pratos_tipicos/boerewors-1200x675.webp' },
-  { name:'Chakalaka', emoji:'🥬', bg:'#2d6a4f', desc:'Relish apimentado de vegetais (cebola, tomate, pimentão, feijão). Originado nas townships, hoje é clássico nacional.', img:'south_africa/pratos_tipicos/chakalaka-1200x675.webp' },
-  { name:'Bunny Chow', emoji:'🥙', bg:'#b5451b', desc:'Pão branco escavado e recheado com curry — criação da comunidade indiana de Durban nos anos 1940. Comida de rua icônica.', img:'south_africa/pratos_tipicos/bunny-chow-1200x675.webp' },
-  { name:'Biltong', emoji:'🥩', bg:'#6b3a2a', desc:'Carne seca temperada com especiarias — o "jerky" sul-africano. Feito de carne bovina, avestruz ou caça. Snack onipresente no país.', img:'south_africa/pratos_tipicos/cbiltong-1200x675.webp' },
+  { name:'Braai', emoji:'🥩', bg:'#8B4513', desc:'O churrasco sul-africano. Mais que comida — é um ritual social. Carne assada em lenha. Existe até o Dia Nacional do Braai (24 de setembro).', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Braaivleis.jpg/640px-Braaivleis.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Bobotie', emoji:'🥧', bg:'#c9a227', desc:'Prato nacional: carne moída temperada com curry, coberta com creme de ovos e assada. Servido com arroz amarelo com passas.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Bobotie.jpg/640px-Bobotie.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Boerewors', emoji:'🌭', bg:'#5c3317', desc:'Linguiça artesanal enrolada em espiral. Para ser chamada de boerewors, deve ter pelo menos 90% de carne bovina — protegido por lei.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Boerewors.jpg/640px-Boerewors.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Chakalaka', emoji:'🥬', bg:'#2d6a4f', desc:'Relish apimentado de vegetais (cebola, tomate, pimentão, feijão). Originado nas townships, hoje é clássico nacional.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Chakalaka.jpg/640px-Chakalaka.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Bunny Chow', emoji:'🥙', bg:'#b5451b', desc:'Pão branco escavado e recheado com curry — criação da comunidade indiana de Durban nos anos 1940. Comida de rua icônica.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Bunny_chow.jpg/640px-Bunny_chow.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Biltong', emoji:'🥩', bg:'#6b3a2a', desc:'Carne seca temperada com especiarias — o "jerky" sul-africano. Feito de carne bovina, avestruz ou caça. Snack onipresente no país.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Beef_biltong.jpg/640px-Beef_biltong.jpg&w=400&h=200&fit=cover&we' },
 ];
 
 const australiaFood = [
-  { name:'Meat Pie', emoji:'🥧', bg:'#8B5E3C', desc:'O pastelão de carne com gravy é o prato nacional não oficial. Presente em todo estádio de críquete e futebol australiano.', img:'australia/pratos_tipicos/Meat-Pie-4x3.jpg' },
-  { name:'Vegemite', emoji:'🫙', bg:'#2b2d42', desc:'Pasta escura de extrato de levedura — ícone cultural. Australianos crescem comendo no café da manhã. Estrangeiros frequentemente odeiam.', img:'australia/pratos_tipicos/vegemite-1024x667.jpg' },
-  { name:'Pavlova', emoji:'🎂', bg:'#e9c46a', desc:'Merengue crocante por fora, macio por dentro, coberto com creme e frutas. A origem é disputada com a Nova Zelândia.', img:'australia/pratos_tipicos/PAVLOVA-25-S-01-500x500.webp' },
-  { name:'Tim Tam', emoji:'🍫', bg:'#3d1e0f', desc:'Biscoito de chocolate banhado em chocolate. O "Tim Tam Slam": morder as pontas e beber café através do biscoito — ritual sagrado.', img:'australia/pratos_tipicos/Tim_Tams.jpg' },
-  { name:'Lamington', emoji:'🍰', bg:'#4a1f5e', desc:'Bolo de baunilha mergulhado em chocolate e coberto com coco ralado. Tão amado que tem seu próprio Dia Nacional (21 de julho).', img:'australia/pratos_tipicos/LAMINGTON-LAYER-CAKE-25-S-01-500x500.jpg' },
-  { name:'Barramundi', emoji:'🐟', bg:'#457b9d', desc:'Peixe nativo, apreciado grelhado ou em fritas. Seu nome vem da língua aborígene e significa "peixe de grande escama".', img:'australia/pratos_tipicos/Barramundi-swimming.webp' },
+  { name:'Meat Pie', emoji:'🥧', bg:'#8B5E3C', desc:'O pastelão de carne com gravy é o prato nacional não oficial. Presente em todo estádio de críquete e futebol australiano.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Meat_pie_with_sauce.jpg/640px-Meat_pie_with_sauce.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Vegemite', emoji:'🫙', bg:'#2b2d42', desc:'Pasta escura de extrato de levedura — ícone cultural. Australianos crescem comendo no café da manhã. Estrangeiros frequentemente odeiam.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Vegemite2.jpg/640px-Vegemite2.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Pavlova', emoji:'🎂', bg:'#e9c46a', desc:'Merengue crocante por fora, macio por dentro, coberto com creme e frutas. A origem é disputada com a Nova Zelândia.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Pavlova_dessert.jpg/640px-Pavlova_dessert.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Tim Tam', emoji:'🍫', bg:'#3d1e0f', desc:'Biscoito de chocolate banhado em chocolate. O "Tim Tam Slam": morder as pontas e beber café através do biscoito — ritual sagrado.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Tim_Tam_biscuits.jpg/640px-Tim_Tam_biscuits.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Lamington', emoji:'🍰', bg:'#4a1f5e', desc:'Bolo de baunilha mergulhado em chocolate e coberto com coco ralado. Tão amado que tem seu próprio Dia Nacional (21 de julho).', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/LamingtonCake.jpg/640px-LamingtonCake.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Barramundi', emoji:'🐟', bg:'#457b9d', desc:'Peixe nativo, apreciado grelhado ou em fritas. Seu nome vem da língua aborígene e significa "peixe de grande escama".', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Barramundi.jpg/640px-Barramundi.jpg&w=400&h=200&fit=cover&we' },
 ];
 
 const nzFood = [
-  { name:'Hangi', emoji:'🥘', bg:'#2b4570', desc:'Refeição Maori cozida em buraco na terra com pedras quentes. Frango, porco, batata-doce e vegetais cozinham horas embaixo da terra.', img:'new_zeland/pratos_tipicos/Hangi.jpg' },
-  { name:'Pavlova (NZ reclama!)', emoji:'🎂', bg:'#e9c46a', desc:'Os neozelandeses têm documentos que comprovam a criação anterior à versão australiana. Debate acalorado que dura décadas.', img:'new_zeland/pratos_tipicos/pavlova-de-frutas.jpg' },
-  { name:'Whitebait Fritter', emoji:'🥚', bg:'#774936', desc:'Omelete leve recheado com pequenos peixes brancos translúcidos. Iguaria tão apreciada que a temporada de pesca é rigorosamente controlada.', img:'new_zeland/pratos_tipicos/Whitebait-take.webp' },
-  { name:'Kumara', emoji:'🍠', bg:'#e76f51', desc:'Batata-doce roxa trazida pelos Maori da Polinésia. O vegetal mais culturalmente significativo do país — aparece em cerimônias tradicionais.', img:'new_zeland/pratos_tipicos/Kumara.jpg' },
-  { name:'Kiwifruit', emoji:'🥝', bg:'#588157', desc:'Originalmente "gooseberry chinês", rebatizado "kiwi" pelos neozelandeses. A NZ é um dos maiores produtores mundiais.', img:'new_zeland/pratos_tipicos/Kiwi-fruit.webp' },
-  { name:'Cordeiro Assado', emoji:'🍖', bg:'#d62828', desc:'A NZ é o maior exportador de carne ovina do mundo. O lamb roast dominical é tradição familiar desde os colonizadores britânicos.', img:'new_zeland/pratos_tipicos/Cordeiro-Assado.jpg' },
+  { name:'Hangi', emoji:'🥘', bg:'#2b4570', desc:'Refeição Maori cozida em buraco na terra com pedras quentes. Frango, porco, batata-doce e vegetais cozinham horas embaixo da terra.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Hangi.jpg/640px-Hangi.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Pavlova (NZ reclama!)', emoji:'🎂', bg:'#e9c46a', desc:'Os neozelandeses têm documentos que comprovam a criação anterior à versão australiana. Debate acalorado que dura décadas.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Pavlova_dessert.jpg/640px-Pavlova_dessert.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Whitebait Fritter', emoji:'🥚', bg:'#774936', desc:'Omelete leve recheado com pequenos peixes brancos translúcidos. Iguaria tão apreciada que a temporada de pesca é rigorosamente controlada.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Whitebait_fritters.jpg/640px-Whitebait_fritters.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Kumara', emoji:'🍠', bg:'#e76f51', desc:'Batata-doce roxa trazida pelos Maori da Polinésia. O vegetal mais culturalmente significativo do país — aparece em cerimônias tradicionais.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Ipomoea_batatas_006.JPG/640px-Ipomoea_batatas_006.JPG&w=400&h=200&fit=cover&we' },
+  { name:'Kiwifruit', emoji:'🥝', bg:'#588157', desc:'Originalmente "gooseberry chinês", rebatizado "kiwi" pelos neozelandeses. A NZ é um dos maiores produtores mundiais.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kiwifruit_cross_section.jpg/640px-Kiwifruit_cross_section.jpg&w=400&h=200&fit=cover&we' },
+  { name:'Cordeiro Assado', emoji:'🍖', bg:'#d62828', desc:'A NZ é o maior exportador de carne ovina do mundo. O lamb roast dominical é tradição familiar desde os colonizadores britânicos.', img:'https://wsrv.nl/?url=https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Roast_lamb.jpg/640px-Roast_lamb.jpg&w=400&h=200&fit=cover&we' },
 ];
 
 // ---- RENDER FUNCTIONS ----
@@ -333,15 +333,12 @@ function renderFood(containerId, foods) {
     `;
     container.appendChild(card);
     if (f.img) {
+      const ph = card.querySelector('.food-img-placeholder');
       const imgEl = document.createElement('img');
       imgEl.src = f.img; imgEl.alt = f.name; imgEl.loading = 'lazy';
-      imgEl.style.cssText = 'width:100%;height:160px;object-fit:cover;display:none;';
-      imgEl.onload = () => {
-        imgEl.style.display = 'block';
-        const ph = card.querySelector('.food-img-placeholder');
-        if (ph) ph.style.display = 'none';
-      };
-      imgEl.onerror = () => {};
+      imgEl.style.cssText = 'width:100%;height:160px;object-fit:cover;display:block;position:absolute;top:0;left:0;';
+      imgEl.onload = () => { if (ph) ph.style.display = 'none'; };
+      imgEl.onerror = () => { imgEl.style.display = 'none'; };
       card.querySelector('.food-img-wrap').appendChild(imgEl);
     }
   });
