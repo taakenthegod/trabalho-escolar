@@ -155,8 +155,7 @@ async function getWikiThumb(title, size = 200) {
     const pages = data.query.pages;
     const page = pages[Object.keys(pages)[0]];
     if (!page.thumbnail) return null;
-    const imgUrl = encodeURIComponent(page.thumbnail.source);
-    return `https://wsrv.nl/?url=${imgUrl}&w=${size}&h=${size}&fit=cover&we`;
+    return page.thumbnail.source;
   } catch { return null; }
 }
 

@@ -4,17 +4,17 @@
   --mono: 'DM Mono', monospace;
 
   /* Paleta HONY — clara, editorial, sofisticada */
-  --bg:        #f2ede8;       /* pedra clara quente */
-  --surface:   #e8e2db;
-  --surface2:  #dbd3ca;       /* hover, bordas internas */
-  --border:    rgba(60,45,30,0.12);
-  --text:      #1a1410;       /* quase preto sépia */
-  --text-muted:#6b5f52;       /* marrom médio */
-  --text-faint:#b0a598;       /* cinza sépia claro */
+  --bg:        #eef0f2;       /* pedra clara quente */
+  --surface:   #e4e7ea;
+  --surface2:  #d6dade;       /* hover, bordas internas */
+  --border:    rgba(40,55,70,0.12);
+  --text:      #1e2630;       /* quase preto sépia */
+  --text-muted:#526070;       /* marrom médio */
+  --text-faint:#9aaab8;       /* cinza sépia claro */
 
   /* Acento — terracota mais escuro para contrastar no claro */
-  --accent:    #9c5c38;
-  --accent2:   #c4845a;       /* âmbar original */
+  --accent:    #2e6e8e;
+  --accent2:   #5a9ab5;       /* âmbar original */
 
   --af1:#2d6a4f;--af2:#8a6b1a;
   --au1:#a03020;--au2:#c05040;
@@ -60,7 +60,7 @@ body{
   position:fixed;top:0;left:0;right:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;
   padding:1.2rem 3rem;
-  background:rgba(242,237,232,.96);
+  background:rgba(238,240,242,.96);
   backdrop-filter:blur(20px);
   border-bottom:1px solid var(--border);
   transition:all var(--transition);
@@ -124,8 +124,8 @@ body{
   text-transform:uppercase;text-decoration:none;
   transition:all .3s;cursor:pointer;border:none;
 }
-.btn-primary{background:var(--accent);color:#f2ede8;font-weight:600}
-.btn-primary:hover{background:#8b4513;transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:#eef0f2;font-weight:600}
+.btn-primary:hover{background:#245a72;transform:translateY(-2px)}
 .btn-ghost{
   background:transparent;color:var(--text);
   border:1px solid var(--border);
@@ -313,7 +313,7 @@ body{
 .famous-photo-wrap{position:relative;width:80px;height:80px}
 .famous-photo{width:80px;height:80px;border-radius:50%;object-fit:cover;object-position:top;display:block}
 .famous-photo-placeholder{width:80px;height:80px;border-radius:50%;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:1.8rem}
-.famous-rank-badge{position:absolute;bottom:-4px;right:-4px;background:var(--accent);color:#f2ede8;font-family:var(--mono);font-size:.6rem;font-weight:700;padding:.15rem .35rem;border-radius:4px}
+.famous-rank-badge{position:absolute;bottom:-4px;right:-4px;background:var(--accent);color:#eef0f2;font-family:var(--mono);font-size:.6rem;font-weight:700;padding:.15rem .35rem;border-radius:4px}
 .au-famous .famous-rank-badge{background:var(--au1)}
 .nz-famous .famous-rank-badge{background:var(--nz1)}
 .famous-info h4{font-family:var(--display);font-size:1rem;margin-bottom:.3rem;color:var(--text)}
