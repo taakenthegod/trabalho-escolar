@@ -231,30 +231,30 @@ const nzFamous = [
 
 // ---- ANIMALS DATA ----
 const africaAnimals = [
-  { name: 'Leão', emoji: '', wiki: 'Lion', unsplash: 'https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=400&q=80', desc: 'Rei da savana. Vive em grupos chamados alcateias. O maior predador terrestre da África.' },
-  { name: 'Elefante Africano', emoji: '', wiki: 'African_bush_elephant', unsplash: 'https://images.unsplash.com/photo-1551316679-9c6ae9dec224?w=400&q=80', desc: 'Maior animal terrestre do mundo. Inteligente, social e com memória prodigiosa. Ameaçado pela caça ilegal.' },
-  { name: 'Rinoceronte', emoji: '', wiki: 'White_rhinoceros', unsplash: 'https://images.unsplash.com/photo-1559715745-e1b33a271c8f?w=400&q=80', desc: 'Criticamente ameaçado de extinção pela caça furtiva. Seu chifre é queratina pura — o mesmo material das unhas humanas.' },
-  { name: 'Leopardo', emoji: '', wiki: 'Leopard', unsplash: 'https://images.unsplash.com/photo-1456926631375-92c8ce872def?w=400&q=80', desc: 'O mais elusivo dos Big Five. Caçador noturno solitário. Carrega suas presas para o alto das árvores.' },
-  { name: 'Búfalo Africano', emoji: '', wiki: 'African_buffalo', unsplash: 'https://images.unsplash.com/photo-1549366021-9f761d450615?w=400&q=80', desc: 'Considerado o mais perigoso dos Big Five. Nunca foi domesticado. Responsável por muitas mortes humanas na África.' },
-  { name: 'Girafa', emoji: '', wiki: 'Giraffe', unsplash: 'https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=400&q=80', desc: 'Animal mais alto do mundo. Seu coração deve bombear sangue 2m acima do corpo. Dorme apenas 30 minutos por dia.' },
+  { name: 'Leão', emoji: '', wiki: 'Lion', desc: 'Rei da savana. Vive em grupos chamados alcateias. O maior predador terrestre da África.' },
+  { name: 'Elefante Africano', emoji: '', wiki: 'African_bush_elephant', desc: 'Maior animal terrestre do mundo. Inteligente, social e com memória prodigiosa. Ameaçado pela caça ilegal.' },
+  { name: 'Rinoceronte', emoji: '', wiki: 'White_rhinoceros', desc: 'Criticamente ameaçado de extinção pela caça furtiva. Seu chifre é queratina pura — o mesmo material das unhas humanas.' },
+  { name: 'Leopardo', emoji: '', wiki: 'Leopard', desc: 'O mais elusivo dos Big Five. Caçador noturno solitário. Carrega suas presas para o alto das árvores.' },
+  { name: 'Búfalo Africano', emoji: '', wiki: 'African_buffalo', desc: 'Considerado o mais perigoso dos Big Five. Nunca foi domesticado. Responsável por muitas mortes humanas na África.' },
+  { name: 'Girafa', emoji: '', wiki: 'Giraffe', desc: 'Animal mais alto do mundo. Seu coração deve bombear sangue 2m acima do corpo. Dorme apenas 30 minutos por dia.' },
 ];
 
 const australiaAnimals = [
-  { name: 'Canguru', emoji: '', wiki: 'Red_kangaroo', unsplash: 'https://images.unsplash.com/photo-1559570278-eb8d71d06403?w=400&q=80', desc: 'Símbolo nacional. O maior marsupial do mundo. Um filhote nasce do tamanho de um feijão e completa o desenvolvimento na bolsa da mãe.' },
-  { name: 'Coala', emoji: '', wiki: 'Koala', unsplash: 'https://images.unsplash.com/photo-1459262838948-3e2de6c1ec80?w=400&q=80', desc: 'Dorme até 22 horas por dia para economizar energia digerindo folhas de eucalipto — que são tóxicas para outros animais.' },
-  { name: 'Ornitorrinco', emoji: '', wiki: 'Platypus', unsplash: 'https://images.unsplash.com/photo-1596408361108-fd08fd6bfbe7?w=400&q=80', desc: 'Mamífero que bota ovos, tem bico de pato, rabo de castor e é um dos poucos mamíferos venenosos do mundo.' },
-  { name: 'Tasmanian Devil', emoji: '', wiki: 'Tasmanian_devil', unsplash: 'https://images.unsplash.com/photo-1589656966895-2f33e7653819?w=400&q=80', desc: 'O maior marsupial carnívoro vivo. Tem a mordida mais forte proporcional ao tamanho entre todos os mamíferos.' },
-  { name: 'Dingo', emoji: '', wiki: 'Dingo', unsplash: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&q=80', desc: 'Cão selvagem australiano. Para mantê-los afastados das ovelhas, foi construída a maior cerca do mundo: 5.614 km.' },
-  { name: 'Emú', emoji: '', wiki: 'Emu', unsplash: 'https://images.unsplash.com/photo-1517849845537-4d257902454a?w=400&q=80', desc: 'Segundo maior pássaro do mundo. Em 1932, o governo australiano declarou guerra aos emus — e os pássaros venceram.' },
+  { name: 'Canguru', emoji: '', wiki: 'Red_kangaroo', desc: 'Símbolo nacional. O maior marsupial do mundo. Um filhote nasce do tamanho de um feijão e completa o desenvolvimento na bolsa da mãe.' },
+  { name: 'Coala', emoji: '', wiki: 'Koala', desc: 'Dorme até 22 horas por dia para economizar energia digerindo folhas de eucalipto — que são tóxicas para outros animais.' },
+  { name: 'Ornitorrinco', emoji: '', wiki: 'Platypus', desc: 'Mamífero que bota ovos, tem bico de pato, rabo de castor e é um dos poucos mamíferos venenosos do mundo.' },
+  { name: 'Tasmanian Devil', emoji: '', wiki: 'Tasmanian_devil', desc: 'O maior marsupial carnívoro vivo. Tem a mordida mais forte proporcional ao tamanho entre todos os mamíferos.' },
+  { name: 'Dingo', emoji: '', wiki: 'Dingo', desc: 'Cão selvagem australiano. Para mantê-los afastados das ovelhas, foi construída a maior cerca do mundo: 5.614 km.' },
+  { name: 'Emú', emoji: '', wiki: 'Emu', desc: 'Segundo maior pássaro do mundo. Em 1932, o governo australiano declarou guerra aos emus — e os pássaros venceram.' },
 ];
 
 const nzAnimals = [
-  { name: 'Kiwi', emoji: '', wiki: 'Kiwi_(bird)', unsplash: 'https://images.unsplash.com/photo-1595433707802-6b2626ef1c91?w=400&q=80', desc: 'Ave nacional. Não voa, tem narinas na ponta do bico e cheira o alimento no chão. Criticamente ameaçada de extinção.' },
-  { name: 'Tuatara', emoji: '', wiki: 'Tuatara', unsplash: 'https://images.unsplash.com/photo-1504450874802-0ba2bcd9b5ae?w=400&q=80', desc: 'Réptil que existe há 250 milhões de anos — praticamente inalterado desde a era dos dinossauros. Exclusivo da Nova Zelândia.' },
-  { name: 'Kea', emoji: '', wiki: 'Kea', unsplash: 'https://images.unsplash.com/photo-1606567595334-d39972c85dbe?w=400&q=80', desc: 'O único papagaio alpino do mundo. Extremamente inteligente e curioso. Conhecido por desmontar carros e roubar objetos de turistas.' },
-  { name: 'Kakapo', emoji: '', wiki: 'Kakapo', localImg: 'new_zeland/animals/kakapo.jpeg', unsplash: 'https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=400&q=80', desc: 'O papagaio mais gordo do mundo — e incapaz de voar. Criticamente ameaçado com apenas ~250 indivíduos vivos.' },
-  { name: 'Baleia Franca', emoji: '', wiki: 'Southern_right_whale', unsplash: 'https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=400&q=80', desc: 'Migra anualmente para as costas da NZ para se reproduzir. O local de observação de baleias de Kaikoura é um dos melhores do mundo.' },
-  { name: 'Golfinho Hector', emoji: '', wiki: "Hector's_dolphin", localImg: 'new_zeland/animals/dolphin-hector.jpeg', unsplash: 'https://images.unsplash.com/photo-1607153333879-c174d265f1d2?w=400&q=80', desc: 'O menor e mais raro golfinho do mundo. Só existe nas águas da Nova Zelândia. Menos de 15.000 indivíduos restantes.' },
+  { name: 'Kiwi', emoji: '', wiki: 'Kiwi_(bird)', desc: 'Ave nacional. Não voa, tem narinas na ponta do bico e cheira o alimento no chão. Criticamente ameaçada de extinção.' },
+  { name: 'Tuatara', emoji: '', wiki: 'Tuatara', desc: 'Réptil que existe há 250 milhões de anos — praticamente inalterado desde a era dos dinossauros. Exclusivo da Nova Zelândia.' },
+  { name: 'Kea', emoji: '', wiki: 'Kea', desc: 'O único papagaio alpino do mundo. Extremamente inteligente e curioso. Conhecido por desmontar carros e roubar objetos de turistas.' },
+  { name: 'Kakapo', emoji: '', wiki: 'Kakapo', localImg: 'new_zeland/animals/kakapo.jpeg', desc: 'O papagaio mais gordo do mundo — e incapaz de voar. Criticamente ameaçado com apenas ~250 indivíduos vivos.' },
+  { name: 'Baleia Franca', emoji: '', wiki: 'Southern_right_whale', desc: 'Migra anualmente para as costas da NZ para se reproduzir. O local de observação de baleias de Kaikoura é um dos melhores do mundo.' },
+  { name: 'Golfinho Hector', emoji: '', wiki: "Hector's_dolphin", localImg: 'new_zeland/animals/dolphin-hector.jpeg', desc: 'O menor e mais raro golfinho do mundo. Só existe nas águas da Nova Zelândia. Menos de 15.000 indivíduos restantes.' },
 ];
 
 // ---- FOOD DATA ----
@@ -303,21 +303,15 @@ function renderAnimals(containerId, animals) {
     container.appendChild(card);
     const ph = card.querySelector('.animal-img-placeholder');
     const loadImg = (src) => {
-      if (!src || !ph || !ph.parentNode) return;
+      if (!src || !ph) return;
       const imgEl = document.createElement('img');
       imgEl.className = 'animal-img';
       imgEl.src = src; imgEl.alt = a.name; imgEl.loading = 'lazy';
-      imgEl.onerror = () => {
-        // fallback to unsplash if wiki fails
-        if (a.unsplash && imgEl.src !== a.unsplash) { imgEl.src = a.unsplash; }
-        else imgEl.style.display = 'none';
-      };
+      imgEl.onerror = () => imgEl.style.display = 'none';
       ph.replaceWith(imgEl);
     };
     if (a.localImg) { loadImg(a.localImg); return; }
-    // Try unsplash directly (reliable), then wiki as secondary
-    loadImg(a.unsplash || null);
-    if (!a.unsplash) getWikiThumb(a.wiki, 300).then(loadImg).catch(() => {});
+    getWikiThumb(a.wiki, 300).then(loadImg).catch(() => {});
   });
 }
 
