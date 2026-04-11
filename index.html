@@ -4,6 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mundos Além do Horizonte</title>
+  <meta name="description" content="Explore a África do Sul, Austrália e Nova Zelândia — culturas milenares, lendas ancestrais, gastronomia, personalidades e histórias que moldaram civilizações." />
+  <meta name="keywords" content="África do Sul, Austrália, Nova Zelândia, cultura, história, gastronomia, apartheid, aborígenes, maori, trabalho escolar, geografia" />
+  <meta name="author" content="taaken" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Mundos Além do Horizonte" />
+  <meta property="og:description" content="Explore a África do Sul, Austrália e Nova Zelândia — culturas milenares, lendas ancestrais, gastronomia e histórias que moldaram civilizações." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://taakenthegod.github.io/trabalho-escolar/" />
+  <meta property="og:image" content="https://taakenthegod.github.io/trabalho-escolar/south_africa/curiosidades/Cabo-Agulhas-2.jpg" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mundos Além do Horizonte" />
+  <meta name="twitter:description" content="África do Sul, Austrália e Nova Zelândia — um site educacional interativo." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -37,6 +50,8 @@
       <li><a href="#africa">África do Sul</a></li>
       <li><a href="#australia">Austrália</a></li>
       <li><a href="#nz">Nova Zelândia</a></li>
+      <li><a href="#mapa">Mapa</a></li>
+      <li><a href="#fontes">Fontes</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle"></button>
   </nav>
@@ -394,6 +409,123 @@
       </div>
     </div>
   </section>
+
+  <!-- MAPA INTERATIVO -->
+  <section id="mapa" class="extra-section">
+    <div class="extra-header">
+      <h2 class="extra-title">Onde ficam?</h2>
+      <p class="extra-subtitle">Clique em um país para explorar sua seção</p>
+    </div>
+    <div class="map-container">
+      <svg id="world-map" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+        <!-- Fundo do oceano -->
+        <rect width="1000" height="500" fill="#0e1a2a"/>
+        <!-- Grade de referência sutil -->
+        <line x1="0" y1="250" x2="1000" y2="250" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+        <line x1="500" y1="0" x2="500" y2="500" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+
+        <!-- ÁFRICA DO SUL - destaque -->
+        <g id="map-africa" class="map-country" data-target="#africa" data-name="África do Sul" data-color="#2d6a4f">
+          <ellipse cx="520" cy="340" rx="38" ry="42" fill="#1a3d25" stroke="#2d6a4f" stroke-width="1.5" opacity="0.7"/>
+          <ellipse cx="520" cy="340" rx="38" ry="42" fill="url(#af-grad)" stroke="#2d6a4f" stroke-width="2"/>
+          <circle cx="520" cy="340" r="6" fill="#52b788"/>
+          <text x="520" y="398" text-anchor="middle" font-size="11" fill="#74c69d" font-family="DM Mono, monospace" letter-spacing="0.08em">ÁFRICA DO SUL</text>
+          <circle cx="520" cy="340" r="18" fill="none" stroke="#52b788" stroke-width="1" opacity="0" class="map-pulse"/>
+        </g>
+
+        <!-- AUSTRÁLIA - destaque -->
+        <g id="map-australia" class="map-country" data-target="#australia" data-name="Austrália" data-color="#a03020">
+          <ellipse cx="800" cy="320" rx="70" ry="50" fill="#3d1510" stroke="#a03020" stroke-width="1.5" opacity="0.7"/>
+          <ellipse cx="800" cy="320" rx="70" ry="50" fill="url(#au-grad)" stroke="#a03020" stroke-width="2"/>
+          <circle cx="800" cy="320" r="6" fill="#c05040"/>
+          <text x="800" y="383" text-anchor="middle" font-size="11" fill="#c07060" font-family="DM Mono, monospace" letter-spacing="0.08em">AUSTRÁLIA</text>
+          <circle cx="800" cy="320" r="18" fill="none" stroke="#c05040" stroke-width="1" opacity="0" class="map-pulse"/>
+        </g>
+
+        <!-- NOVA ZELÂNDIA - destaque -->
+        <g id="map-nz" class="map-country" data-target="#nz" data-name="Nova Zelândia" data-color="#1a4fa0">
+          <ellipse cx="890" cy="360" rx="22" ry="30" fill="#0d2040" stroke="#1a4fa0" stroke-width="1.5" opacity="0.7"/>
+          <ellipse cx="890" cy="360" rx="22" ry="30" fill="url(#nz-grad)" stroke="#1a4fa0" stroke-width="2"/>
+          <circle cx="890" cy="360" r="5" fill="#3a86ff"/>
+          <text x="890" y="404" text-anchor="middle" font-size="10" fill="#6aa0ff" font-family="DM Mono, monospace" letter-spacing="0.06em">NOVA ZEL.</text>
+          <circle cx="890" cy="360" r="16" fill="none" stroke="#3a86ff" stroke-width="1" opacity="0" class="map-pulse"/>
+        </g>
+
+        <!-- Outros continentes em silhueta muito sutil -->
+        <ellipse cx="200" cy="200" rx="120" ry="100" fill="rgba(255,255,255,0.025)" rx="120"/>
+        <ellipse cx="520" cy="230" rx="80" ry="90" fill="rgba(255,255,255,0.025)"/>
+        <ellipse cx="700" cy="180" rx="130" ry="80" fill="rgba(255,255,255,0.025)"/>
+        <ellipse cx="330" cy="310" rx="55" ry="80" fill="rgba(255,255,255,0.02)"/>
+
+        <!-- Gradientes -->
+        <defs>
+          <radialGradient id="af-grad" cx="50%" cy="40%"><stop offset="0%" stop-color="#52b788"/><stop offset="100%" stop-color="#1a3d25"/></radialGradient>
+          <radialGradient id="au-grad" cx="50%" cy="40%"><stop offset="0%" stop-color="#c05040"/><stop offset="100%" stop-color="#3d1510"/></radialGradient>
+          <radialGradient id="nz-grad" cx="50%" cy="40%"><stop offset="0%" stop-color="#3a86ff"/><stop offset="100%" stop-color="#0d2040"/></radialGradient>
+        </defs>
+
+        <!-- Linhas de conexão entre países -->
+        <path d="M 558 335 Q 680 280 762 318" stroke="rgba(200,149,80,0.15)" stroke-width="1" fill="none" stroke-dasharray="4,4"/>
+        <path d="M 868 355 Q 850 340 870 325" stroke="rgba(200,149,80,0.15)" stroke-width="1" fill="none" stroke-dasharray="4,4"/>
+
+        <!-- Tooltip -->
+        <g id="map-tooltip" opacity="0" style="pointer-events:none">
+          <rect id="tt-bg" x="0" y="0" width="140" height="36" rx="6" fill="#211a0e" stroke="rgba(200,149,80,0.4)" stroke-width="1"/>
+          <text id="tt-text" x="70" y="22" text-anchor="middle" font-size="12" fill="#f0e8d8" font-family="DM Mono, monospace"></text>
+        </g>
+      </svg>
+      <p class="map-hint">Clique em um país destacado para ir à sua seção</p>
+    </div>
+  </section>
+
+  <!-- LINHA DO TEMPO COMPARATIVA -->
+  <section id="timeline-comp" class="extra-section">
+    <div class="extra-header">
+      <h2 class="extra-title">Linha do Tempo Comparativa</h2>
+      <p class="extra-subtitle">Eventos simultâneos nos três países</p>
+    </div>
+    <div class="comp-timeline">
+      <div class="comp-legends">
+        <span class="cl-dot af-dot"></span><span class="cl-label">África do Sul</span>
+        <span class="cl-dot au-dot2"></span><span class="cl-label">Austrália</span>
+        <span class="cl-dot nz-dot2"></span><span class="cl-label">Nova Zelândia</span>
+      </div>
+      <div class="comp-rows">
+        <div class="comp-row"><div class="comp-year">Séc. XVII</div><div class="comp-events"><div class="comp-ev af-ev">🇿🇦 1652 — Holandeses chegam ao Cabo</div><div class="comp-ev au-ev">🇦🇺 1606 — Willem Janszoon avista a Austrália</div><div class="comp-ev nz-ev">🇳🇿 1642 — Abel Tasman avista a NZ</div></div></div>
+        <div class="comp-row"><div class="comp-year">Séc. XVIII</div><div class="comp-events"><div class="comp-ev af-ev">🇿🇦 1795 — Britânicos tomam o Cabo</div><div class="comp-ev au-ev">🇦🇺 1788 — Primeira Frota britânica chega</div><div class="comp-ev nz-ev">🇳🇿 1769 — James Cook mapeia a NZ</div></div></div>
+        <div class="comp-row"><div class="comp-year">Séc. XIX</div><div class="comp-events"><div class="comp-ev af-ev">🇿🇦 1816 — Shaka unifica os Zulus</div><div class="comp-ev au-ev">🇦🇺 1851 — Febre do Ouro em Victoria</div><div class="comp-ev nz-ev">🇳🇿 1840 — Tratado de Waitangi</div></div></div>
+        <div class="comp-row"><div class="comp-year">Início séc. XX</div><div class="comp-events"><div class="comp-ev af-ev">🇿🇦 1910 — União Sul-Africana formada</div><div class="comp-ev au-ev">🇦🇺 1901 — Federação da Austrália</div><div class="comp-ev nz-ev">🇳🇿 1893 — Primeiro voto feminino do mundo</div></div></div>
+        <div class="comp-row"><div class="comp-year">Meados séc. XX</div><div class="comp-events"><div class="comp-ev af-ev">🇿🇦 1948 — Início do Apartheid</div><div class="comp-ev au-ev">🇦🇺 1942 — Ataque japonês a Darwin (WWII)</div><div class="comp-ev nz-ev">🇳🇿 1953 — Hillary conquista o Everest</div></div></div>
+        <div class="comp-row"><div class="comp-year">Final séc. XX</div><div class="comp-events"><div class="comp-ev af-ev">🇿🇦 1994 — Fim do Apartheid. Mandela eleito</div><div class="comp-ev au-ev">🇦🇺 2000 — Olimpíadas de Sydney</div><div class="comp-ev nz-ev">🇳🇿 1987 — País livre de armas nucleares</div></div></div>
+        <div class="comp-row"><div class="comp-year">Séc. XXI</div><div class="comp-events"><div class="comp-ev af-ev">🇿🇦 2010 — 1ª Copa do Mundo na África</div><div class="comp-ev au-ev">🇦🇺 2019 — Incêndios devastam 18,6M ha</div><div class="comp-ev nz-ev">🇳🇿 2019 — Ardern proíbe fuzis em 6 dias</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FONTES -->
+  <section id="fontes" class="extra-section">
+    <div class="extra-header">
+      <h2 class="extra-title">Fontes & Referências</h2>
+      <p class="extra-subtitle">Todo o conteúdo é baseado em fontes verificáveis</p>
+    </div>
+    <div class="sources-grid">
+      <div class="source-card"><div class="source-icon">🌍</div><h4>África do Sul</h4><ul><li><a href="https://www.gov.za" target="_blank" rel="noopener">gov.za — Governo oficial da África do Sul</a></li><li><a href="https://www.statssa.gov.za" target="_blank" rel="noopener">StatsSA — Estatísticas populacionais</a></li><li><a href="https://www.sahistory.org.za" target="_blank" rel="noopener">SA History Archive</a></li><li><a href="https://pt.wikipedia.org/wiki/África_do_Sul" target="_blank" rel="noopener">Wikipedia — África do Sul</a></li></ul></div>
+      <div class="source-card"><div class="source-icon">🦘</div><h4>Austrália</h4><ul><li><a href="https://www.abs.gov.au" target="_blank" rel="noopener">ABS — Australian Bureau of Statistics</a></li><li><a href="https://www.australia.gov.au" target="_blank" rel="noopener">australia.gov.au — Portal oficial</a></li><li><a href="https://www.nma.gov.au" target="_blank" rel="noopener">National Museum of Australia</a></li><li><a href="https://pt.wikipedia.org/wiki/Austrália" target="_blank" rel="noopener">Wikipedia — Austrália</a></li></ul></div>
+      <div class="source-card"><div class="source-icon">🥝</div><h4>Nova Zelândia</h4><ul><li><a href="https://www.stats.govt.nz" target="_blank" rel="noopener">Stats NZ — Estatísticas nacionais</a></li><li><a href="https://www.newzealand.com" target="_blank" rel="noopener">Tourism New Zealand</a></li><li><a href="https://www.tepapa.govt.nz" target="_blank" rel="noopener">Te Papa Tongarewa — Museu Nacional</a></li><li><a href="https://pt.wikipedia.org/wiki/Nova_Zelândia" target="_blank" rel="noopener">Wikipedia — Nova Zelândia</a></li></ul></div>
+      <div class="source-card wide-source"><div class="source-icon">📚</div><h4>Fontes Gerais</h4><ul class="sources-inline"><li><a href="https://www.un.org/en/about-us/member-states" target="_blank" rel="noopener">ONU — Dados demográficos mundiais</a></li><li><a href="https://data.worldbank.org" target="_blank" rel="noopener">Banco Mundial — Indicadores</a></li><li><a href="https://whc.unesco.org" target="_blank" rel="noopener">UNESCO — Patrimônios da Humanidade</a></li><li><a href="https://www.cia.gov/the-world-factbook/" target="_blank" rel="noopener">CIA World Factbook</a></li></ul></div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox-overlay">
+    <button class="lb-close" id="lbClose">✕</button>
+    <button class="lb-prev" id="lbPrev">‹</button>
+    <button class="lb-next" id="lbNext">›</button>
+    <div class="lb-content">
+      <img id="lb-img" src="" alt="" />
+      <p id="lb-caption"></p>
+    </div>
+  </div>
 
   <footer>
     <div class="footer-inner">

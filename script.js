@@ -481,3 +481,127 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log(' Mundos Além do Horizonte — carregado!');
+
+// ====================================================================
+//  MAPA INTERATIVO
+// ====================================================================
+document.querySelectorAll('.map-country').forEach(country => {
+  const tooltip = document.getElementById('map-tooltip');
+  const ttText  = document.getElementById('tt-text');
+  const ttBg    = document.getElementById('tt-bg');
+
+  country.addEventListener('mouseenter', (e) => {
+    const name = country.dataset.name;
+    ttText.textContent = name;
+    const bbox = ttText.getBBox();
+    const w = bbox.width + 24;
+    const svgRect = document.getElementById('world-map').getBoundingClientRect();
+    const cx = parseFloat(country.querySelector('ellipse, circle').getAttribute('cx'));
+    const cy = parseFloat(country.querySelector('ellipse, circle').getAttribute('cy'));
+    ttBg.setAttribute('width', w);
+    ttBg.setAttribute('x', cx - w/2);
+    ttBg.setAttribute('y', cy - 58);
+    ttText.setAttribute('x', cx);
+    ttText.setAttribute('y', cy - 36);
+    tooltip.setAttribute('opacity', '1');
+  });
+
+  country.addEventListener('mouseleave', () => {
+    tooltip.setAttribute('opacity', '0');
+  });
+
+  country.addEventListener('click', () => {
+    const target = document.querySelector(country.dataset.target);
+    if (target) {
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' });
+    }
+  });
+});
+
+// ====================================================================
+//  LIGHTBOX
+// ====================================================================
+const lightbox   = document.getElementById('lightbox');
+const lbImg      = document.getElementById('lb-img');
+const lbCaption  = document.getElementById('lb-caption');
+const lbClose    = document.getElementById('lbClose');
+const lbPrev     = document.getElementById('lbPrev');
+const lbNext     = document.getElementById('lbNext');
+
+let lbImages = [];
+let lbIndex  = 0;
+
+function openLightbox(images, index) {
+  lbImages = images;
+  lbIndex  = index;
+  showLbImage();
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function showLbImage() {
+  const { src, caption } = lbImages[lbIndex];
+  lbImg.src = src;
+  lbImg.alt = caption;
+  lbCaption.textContent = caption;
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+lbClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+lbPrev.addEventListener('click', () => {
+  lbIndex = (lbIndex - 1 + lbImages.length) % lbImages.length;
+  showLbImage();
+});
+lbNext.addEventListener('click', () => {
+  lbIndex = (lbIndex + 1) % lbImages.length;
+  showLbImage();
+});
+
+document.addEventListener('keydown', e => {
+  if (!lightbox.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') { lbIndex = (lbIndex - 1 + lbImages.length) % lbImages.length; showLbImage(); }
+  if (e.key === 'ArrowRight') { lbIndex = (lbIndex + 1) % lbImages.length; showLbImage(); }
+});
+
+// Attach lightbox to curiosity cards after DOM is ready
+function attachLightbox(sectionSelector) {
+  const section   = document.querySelector(sectionSelector);
+  if (!section) return;
+  const cards     = section.querySelectorAll('.curiosity-card');
+  const imageList = [];
+
+  cards.forEach(card => {
+    const img     = card.querySelector('.curiosity-img');
+    const caption = card.querySelector('h4')?.textContent || '';
+    if (img && img.src && !img.src.includes('undefined')) {
+      imageList.push({ src: img.src, caption });
+    }
+  });
+
+  cards.forEach((card, i) => {
+    card.addEventListener('click', () => {
+      const img     = card.querySelector('.curiosity-img');
+      const caption = card.querySelector('h4')?.textContent || '';
+      if (!img) return;
+      const clickedSrc = img.src;
+      const validImages = imageList.filter(x => x.src);
+      const idx = validImages.findIndex(x => x.src === clickedSrc);
+      openLightbox(validImages, idx >= 0 ? idx : 0);
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    attachLightbox('#africa');
+    attachLightbox('#australia');
+    attachLightbox('#nz');
+  }, 500);
+});
