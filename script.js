@@ -1200,29 +1200,49 @@ document.addEventListener("DOMContentLoaded", () => {
 console.log(" Mundos Além do Horizonte — carregado!");
 
 // ====================================================================
-//  MAPA ASCII — pins clicáveis
+//  MAPA INTERATIVO
 // ====================================================================
-document.querySelectorAll('.ascii-pin').forEach(pin => {
-  pin.addEventListener('click', () => {
-    const target = document.querySelector(pin.dataset.target);
+document.querySelectorAll(".map-country").forEach((country) => {
+  const tooltip = document.getElementById("map-tooltip");
+  const ttText = document.getElementById("tt-text");
+  const ttBg = document.getElementById("tt-bg");
+
+  country.addEventListener("mouseenter", (e) => {
+    const name = country.dataset.name;
+    ttText.textContent = name;
+    const bbox = ttText.getBBox();
+    const w = bbox.width + 24;
+    const svgRect = document
+      .getElementById("world-map")
+      .getBoundingClientRect();
+    const cx = parseFloat(
+      country.querySelector("ellipse, circle").getAttribute("cx"),
+    );
+    const cy = parseFloat(
+      country.querySelector("ellipse, circle").getAttribute("cy"),
+    );
+    ttBg.setAttribute("width", w);
+    ttBg.setAttribute("x", cx - w / 2);
+    ttBg.setAttribute("y", cy - 58);
+    ttText.setAttribute("x", cx);
+    ttText.setAttribute("y", cy - 36);
+    tooltip.setAttribute("opacity", "1");
+  });
+
+  country.addEventListener("mouseleave", () => {
+    tooltip.setAttribute("opacity", "0");
+  });
+
+  country.addEventListener("click", () => {
+    const target = document.querySelector(country.dataset.target);
     if (target) {
       window.scrollTo({
         top: target.getBoundingClientRect().top + window.pageYOffset - 80,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     }
   });
 });
-
-// Highlight tags [ZA] [AU] [NZ] inside the pre with colored spans
-(function highlightMapTags() {
-  const pre = document.getElementById('asciiMap');
-  if (!pre) return;
-  pre.innerHTML = pre.innerHTML
-    .replace(/\[ZA\]/g, '<span style="color:#52b788;font-weight:700">[ZA]</span>')
-    .replace(/\[AU\]/g, '<span style="color:#c05040;font-weight:700">[AU]</span>')
-    .replace(/\[NZ\]/g, '<span style="color:#3a86ff;font-weight:700">[NZ]</span>');
-})();
 
 // ====================================================================
 //  LIGHTBOX
@@ -1313,51 +1333,9 @@ function attachLightbox(sectionSelector) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Curiosidades lightbox (carregadas estaticamente)
   setTimeout(() => {
     attachLightbox("#africa");
     attachLightbox("#australia");
     attachLightbox("#nz");
   }, 500);
-
-  // Animais lightbox — imagens chegam dinamicamente via Wikipedia
-  // usamos MutationObserver em cada container
-  ['africa-animals', 'australia-animals', 'nz-animals'].forEach(containerId => {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-
-    function bindCard(card) {
-      if (card.dataset.lb) return; // já foi vinculado
-      card.dataset.lb = '1';
-      card.style.cursor = 'zoom-in';
-      card.addEventListener('click', () => {
-        // Coleta todas as imagens carregadas no momento do clique
-        const allCards = [...container.querySelectorAll('.animal-card')];
-        const imageList = allCards.reduce((acc, c) => {
-          const img = c.querySelector('.animal-img');
-          const name = c.querySelector('h4')?.textContent
-                    || c.querySelector('.animal-name')?.textContent
-                    || '';
-          if (img && img.src && !img.src.includes('undefined')) {
-            acc.push({ src: img.src, caption: name });
-          }
-          return acc;
-        }, []);
-
-        const clickedImg = card.querySelector('.animal-img');
-        if (!clickedImg) return;
-        const idx = imageList.findIndex(x => x.src === clickedImg.src);
-        openLightbox(imageList, idx >= 0 ? idx : 0);
-      });
-    }
-
-    // Bind cards já existentes
-    container.querySelectorAll('.animal-card').forEach(bindCard);
-
-    // Bind cards que ainda vão chegar (imagens carregam async)
-    const obs = new MutationObserver(() => {
-      container.querySelectorAll('.animal-card').forEach(bindCard);
-    });
-    obs.observe(container, { childList: true, subtree: true });
-  });
 });
