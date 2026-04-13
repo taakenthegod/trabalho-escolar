@@ -10,17 +10,63 @@ window.addEventListener("scroll", () => {
   highlightNav();
 });
 
-// ---- NAV TOGGLE ----
-document.getElementById("navToggle").addEventListener("click", () => {
-  document.querySelector(".nav-links").classList.toggle("open");
+// ---- NAV TOGGLE (HAMBURGER) ----
+const navToggle = document.getElementById("navToggle");
+const mobileMenu = document.getElementById("mobileMenu");
+
+function openMenu() {
+  navToggle.classList.add("open");
+  mobileMenu.classList.add("open");
+  navToggle.setAttribute("aria-expanded", "true");
+  mobileMenu.setAttribute("aria-hidden", "false");
+}
+
+function closeMenu() {
+  navToggle.classList.remove("open");
+  mobileMenu.classList.remove("open");
+  navToggle.setAttribute("aria-expanded", "false");
+  mobileMenu.setAttribute("aria-hidden", "true");
+}
+
+navToggle.addEventListener("click", () => {
+  navToggle.classList.contains("open") ? closeMenu() : openMenu();
 });
-document
-  .querySelectorAll(".nav-links a")
-  .forEach((a) =>
-    a.addEventListener("click", () =>
-      document.querySelector(".nav-links").classList.remove("open"),
-    ),
-  );
+
+// Fechar ao clicar em link do mobile
+document.querySelectorAll(".mobile-links a").forEach((a) =>
+  a.addEventListener("click", closeMenu)
+);
+
+// Fechar ao clicar fora
+document.addEventListener("click", (e) => {
+  if (!document.getElementById("navbar").contains(e.target)) closeMenu();
+});
+
+// ---- LANGUAGE SWITCHER ----
+let currentLang = "pt";
+
+function setLang(lang) {
+  currentLang = lang;
+
+  // Atualizar todos os botões de idioma (nav + mobile)
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.lang === lang);
+  });
+
+  // Atualizar textos dos links que têm data-pt / data-en
+  document.querySelectorAll("a[data-pt]").forEach((a) => {
+    a.textContent = a.dataset[lang] || a.dataset.pt;
+  });
+
+  // Atualizar aria-label do toggle
+  navToggle.setAttribute("aria-label", lang === "pt" ? "Abrir menu" : "Open menu");
+}
+
+// Eventos nos botões de idioma (todos, inclusive dentro do mobile menu)
+document.querySelectorAll(".lang-btn").forEach((btn) => {
+  btn.addEventListener("click", () => setLang(btn.dataset.lang));
+});
+
 
 // ---- SMOOTH SCROLL ----
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
