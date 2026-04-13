@@ -113,10 +113,17 @@ body {
 #navbar.scrolled {
   padding: 0.8rem 3rem;
 }
+
 .nav-links {
   display: flex;
   gap: 2.5rem;
   list-style: none;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 }
 .nav-links a {
   color: var(--text-muted);
