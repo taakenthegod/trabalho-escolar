@@ -666,37 +666,31 @@ const africaAnimals = [
   {
     name: "Leão",
     wiki: "Lion",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Lion_waiting_in_Namibia.jpg/320px-Lion_waiting_in_Namibia.jpg",
     desc: "Rei da savana. Vive em grupos chamados alcateias. O maior predador terrestre da África.",
   },
   {
     name: "Elefante Africano",
     wiki: "African_bush_elephant",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/African_Elephant_%28Loxodonta_africana%29_male_%2817289351254%29.jpg/320px-African_Elephant_%28Loxodonta_africana%29_male_%2817289351254%29.jpg",
     desc: "Maior animal terrestre do mundo. Inteligente, social e com memória prodigiosa. Ameaçado pela caça ilegal.",
   },
   {
     name: "Rinoceronte",
     wiki: "White_rhinoceros",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Southern_white_rhinoceros_%28Ceratotherium_simum_simum%29_male.jpg/320px-Southern_white_rhinoceros_%28Ceratotherium_simum_simum%29_male.jpg",
     desc: "Criticamente ameaçado de extinção pela caça furtiva. Seu chifre é queratina pura — o mesmo material das unhas humanas.",
   },
   {
     name: "Leopardo",
     wiki: "Leopard",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Leopard_in_Kruger.jpg/320px-Leopard_in_Kruger.jpg",
     desc: "O mais elusivo dos Big Five. Caçador noturno solitário. Carrega suas presas para o alto das árvores.",
   },
   {
     name: "Búfalo Africano",
     wiki: "African_buffalo",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/African_Buffalo%2C_Ngorongoro.jpg/320px-African_Buffalo%2C_Ngorongoro.jpg",
     desc: "Considerado o mais perigoso dos Big Five. Nunca foi domesticado. Responsável por muitas mortes humanas na África.",
   },
   {
     name: "Girafa",
     wiki: "Giraffe",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Giraffe_Mikumi_National_Park_Tanzania.jpg/213px-Giraffe_Mikumi_National_Park_Tanzania.jpg",
     desc: "Animal mais alto do mundo. Seu coração deve bombear sangue 2m acima do corpo. Dorme apenas 30 minutos por dia.",
   },
 ];
@@ -705,37 +699,31 @@ const australiaAnimals = [
   {
     name: "Canguru",
     wiki: "Red_kangaroo",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Kangaroo_near_Coober_Pedy_%28cropped%29.jpg/320px-Kangaroo_near_Coober_Pedy_%28cropped%29.jpg",
     desc: "Símbolo nacional. O maior marsupial do mundo. Um filhote nasce do tamanho de um feijão e completa o desenvolvimento na bolsa da mãe.",
   },
   {
     name: "Coala",
     wiki: "Koala",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Koala_climbing_tree.jpg/240px-Koala_climbing_tree.jpg",
     desc: "Dorme até 22 horas por dia para economizar energia digerindo folhas de eucalipto — que são tóxicas para outros animais.",
   },
   {
     name: "Ornitorrinco",
     wiki: "Platypus",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Platypus.jpg/320px-Platypus.jpg",
     desc: "Mamífero que bota ovos, tem bico de pato, rabo de castor e é um dos poucos mamíferos venenosos do mundo.",
   },
   {
     name: "Tasmanian Devil",
     wiki: "Tasmanian_devil",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Sarcophilus_harrisii_taranna.jpg/320px-Sarcophilus_harrisii_taranna.jpg",
     desc: "O maior marsupial carnívoro vivo. Tem a mordida mais forte proporcional ao tamanho entre todos os mamíferos.",
   },
   {
     name: "Dingo",
     wiki: "Dingo",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Dingo_on_Fraser_Island.jpg/320px-Dingo_on_Fraser_Island.jpg",
     desc: "Cão selvagem australiano. Para mantê-los afastados das ovelhas, foi construída a maior cerca do mundo: 5.614 km.",
   },
   {
     name: "Emú",
     wiki: "Emu",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Emu-Tabular_003.jpg/230px-Emu-Tabular_003.jpg",
     desc: "Segundo maior pássaro do mundo. Em 1932, o governo australiano declarou guerra aos emus — e os pássaros venceram.",
   },
 ];
@@ -744,19 +732,16 @@ const nzAnimals = [
   {
     name: "Kiwi",
     wiki: "Kiwi_(bird)",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Brown_kiwi_vs2.jpg/320px-Brown_kiwi_vs2.jpg",
     desc: "Ave nacional. Não voa, tem narinas na ponta do bico e cheira o alimento no chão. Criticamente ameaçada de extinção.",
   },
   {
     name: "Tuatara",
     wiki: "Tuatara",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Tuatara_at_Dunedin_Botanical_Garden.jpg/320px-Tuatara_at_Dunedin_Botanical_Garden.jpg",
     desc: "Réptil que existe há 250 milhões de anos — praticamente inalterado desde a era dos dinossauros. Exclusivo da Nova Zelândia.",
   },
   {
     name: "Kea",
     wiki: "Kea",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Kea_%28Nestor_notabilis%29.jpg/320px-Kea_%28Nestor_notabilis%29.jpg",
     desc: "O único papagaio alpino do mundo. Extremamente inteligente e curioso. Conhecido por desmontar carros e roubar objetos de turistas.",
   },
   {
@@ -768,7 +753,6 @@ const nzAnimals = [
   {
     name: "Baleia Franca",
     wiki: "Southern_right_whale",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Right_whale_calf.jpg/320px-Right_whale_calf.jpg",
     desc: "Migra anualmente para as costas da NZ para se reproduzir. O local de observação de baleias de Kaikoura é um dos melhores do mundo.",
   },
   {
