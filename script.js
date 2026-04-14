@@ -1,8 +1,3 @@
-// ============================================================
-//  MUNDOS ALÉM DO HORIZONTE — script.js
-// ============================================================
-// Loader controlado pelo script inline no <head> do index.html
-
 // ---- NAVBAR ----
 const navbar = document.getElementById("navbar");
 window.addEventListener("scroll", () => {
@@ -29,95 +24,6 @@ function closeMenu() {
 navToggle.addEventListener("click", () => navToggle.classList.contains("open") ? closeMenu() : openMenu());
 document.querySelectorAll(".mobile-links a").forEach(a => a.addEventListener("click", closeMenu));
 document.addEventListener("click", e => { if (!document.getElementById("navbar").contains(e.target)) closeMenu(); });
-
-// ============================================================
-//  i18n — TRADUÇÕES COMPLETAS
-// ============================================================
-let currentLang = "pt";
-
-const i18n = {
-  pt: {
-    "loader":"Explorando o mundo...",
-    "nav.home":"Início","nav.africa":"África do Sul","nav.australia":"Austrália","nav.nz":"Nova Zelândia","nav.sources":"Fontes",
-    "hero.eyebrow":"Uma jornada pelos confins do globo",
-    "hero.line1":"Mundos","hero.line2":"Além do","hero.line3":"Horizonte",
-    "hero.desc":"Explore a África do Sul, Austrália e Nova Zelândia — culturas milenares, lendas ancestrais, gastronomia, personagens e histórias que moldaram civilizações.",
-    "hero.cta":"Começar exploração","hero.scroll":"Role para explorar",
-    "common.million":"milhões","common.historicDates":"Datas Históricas","common.curiosities":"Curiosidades & Lendas",
-    "common.animals":"Animais Icônicos","common.food":"Principais Pratos Típicos","common.famous":"Top 20 Personalidades Famosas",
-    "common.culture":"Cultura Única","common.historicalIssues":"Questões Históricas",
-    "africa.title":"A Nação Arco-Íris",
-    "africa.subtitle":"11 línguas oficiais. 60 milhões de histórias. Um passado que transformou o mundo.",
-    "australia.title":"O Continente Ilha",
-    "australia.subtitle":"65.000 anos de história aborígene. O país mais plano, mais seco e mais isolado do mundo.",
-    "nz.title":"Aotearoa",
-    "nz.subtitle":"A Terra das Longas Nuvens Brancas. Lar dos Maori. O lugar onde o sol nasce primeiro.",
-    "comp.title":"Linha do Tempo Comparativa","comp.subtitle":"Eventos simultâneos nos três países",
-    "sources.title":"Fontes & Referências","sources.subtitle":"Todo o conteúdo é baseado em fontes verificáveis",
-    "footer.wordmark":"Mundos Além do Horizonte",
-    "footer.legal":"© 2026 Mundos Além do Horizonte. Trabalho de caráter educacional. Todos os direitos culturais e históricos pertencem aos povos representados.",
-    "footer.credit":" Desenvolvido por taaken",
-  },
-  en: {
-    "loader":"Exploring the world...",
-    "nav.home":"Home","nav.africa":"South Africa","nav.australia":"Australia","nav.nz":"New Zealand","nav.sources":"Sources",
-    "hero.eyebrow":"A journey to the ends of the globe",
-    "hero.line1":"Worlds","hero.line2":"Beyond the","hero.line3":"Horizon",
-    "hero.desc":"Explore South Africa, Australia and New Zealand — ancient cultures, ancestral legends, gastronomy, iconic figures and histories that shaped civilizations.",
-    "hero.cta":"Start exploring","hero.scroll":"Scroll to explore",
-    "common.million":"million","common.historicDates":"Historic Dates","common.curiosities":"Curiosities & Legends",
-    "common.animals":"Iconic Animals","common.food":"Traditional Dishes","common.famous":"Top 20 Famous Personalities",
-    "common.culture":"Unique Culture","common.historicalIssues":"Historical Issues",
-    "africa.title":"The Rainbow Nation",
-    "africa.subtitle":"11 official languages. 60 million stories. A past that changed the world.",
-    "australia.title":"The Island Continent",
-    "australia.subtitle":"65,000 years of Aboriginal history. The flattest, driest and most isolated country on Earth.",
-    "nz.title":"Aotearoa",
-    "nz.subtitle":"The Land of the Long White Cloud. Home of the Māori. The place where the sun rises first.",
-    "comp.title":"Comparative Timeline","comp.subtitle":"Simultaneous events across the three countries",
-    "sources.title":"Sources & References","sources.subtitle":"All content is based on verifiable sources",
-    "footer.wordmark":"Worlds Beyond the Horizon",
-    "footer.legal":"© 2026 Worlds Beyond the Horizon. Educational work. All cultural and historical rights belong to the peoples represented.",
-    "footer.credit":" Developed by taaken",
-  }
-};
-
-function applyTranslations(lang) {
-  const t = i18n[lang];
-  if (!t) return;
-  document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
-  if (t["loader"]) document.title = lang === "pt" ? "Mundos Além do Horizonte" : "Worlds Beyond the Horizon";
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const key = el.getAttribute("data-i18n");
-    if (t[key] === undefined) return;
-    // Only update direct text nodes (preserve child elements)
-    const kids = [...el.childNodes];
-    const textKids = kids.filter(n => n.nodeType === 3);
-    if (textKids.length && !kids.some(n => n.nodeType === 1)) {
-      el.textContent = t[key];
-    } else if (!kids.some(n => n.nodeType === 1)) {
-      el.textContent = t[key];
-    } else {
-      // Has child elements — update first text node only
-      const first = kids.find(n => n.nodeType === 3 && n.textContent.trim());
-      if (first) first.textContent = t[key];
-    }
-  });
-  document.querySelectorAll(".lang-btn").forEach(btn =>
-    btn.classList.toggle("active", btn.dataset.lang === lang)
-  );
-  navToggle.setAttribute("aria-label", lang === "pt" ? "Abrir menu" : "Open menu");
-}
-
-function setLang(lang) {
-  currentLang = lang;
-  applyTranslations(lang);
-  rerenderDynamicCards();
-}
-
-document.querySelectorAll(".lang-btn").forEach(btn =>
-  btn.addEventListener("click", () => setLang(btn.dataset.lang))
-);
 
 
 
@@ -1079,8 +985,8 @@ function renderAnimals(containerId, animals) {
   if (!container) return;
   const imageList = [];
   animals.forEach((a) => {
-    const name = currentLang === "en" && a.nameEn ? a.nameEn : a.name;
-    const desc = currentLang === "en" && a.descEn ? a.descEn : a.desc;
+    const name = a.name;
+    const desc = a.desc;
     const card = document.createElement("div");
     card.className = "animal-card visible";
     card.style.cursor = "pointer";
@@ -1115,8 +1021,8 @@ function renderFood(containerId, foods) {
   const container = document.getElementById(containerId);
   if (!container) return;
   foods.forEach((f) => {
-    const name = currentLang === "en" && f.nameEn ? f.nameEn : f.name;
-    const desc = currentLang === "en" && f.descEn ? f.descEn : f.desc;
+    const name = f.name;
+    const desc = f.desc;
     const card = document.createElement("div");
     card.className = "food-card visible";
     const imgHtml = f.img
@@ -1133,8 +1039,8 @@ function renderFamousCards(id, people, cardClass, tagClass) {
   const container = document.getElementById(id);
   if (!container) return;
   people.forEach((p) => {
-    const desc = currentLang === "en" && p.descEn ? p.descEn : p.desc;
-    const tag  = currentLang === "en" && p.tagEn  ? p.tagEn  : p.tag;
+    const desc = p.desc;
+    const tag  = p.tag;
     const card = document.createElement("div");
     card.className = `famous-card ${cardClass} visible`;
     card.innerHTML = `
