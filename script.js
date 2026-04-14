@@ -10,7 +10,7 @@ window.addEventListener("scroll", () => {
   highlightNav();
 });
 
-// ---- NAV TOGGLE (HAMBURGER) ----
+// ---- NAV TOGGLE (hamburguer) ----
 const navToggle = document.getElementById("navToggle");
 const mobileMenu = document.getElementById("mobileMenu");
 
@@ -20,52 +20,105 @@ function openMenu() {
   navToggle.setAttribute("aria-expanded", "true");
   mobileMenu.setAttribute("aria-hidden", "false");
 }
-
 function closeMenu() {
   navToggle.classList.remove("open");
   mobileMenu.classList.remove("open");
   navToggle.setAttribute("aria-expanded", "false");
   mobileMenu.setAttribute("aria-hidden", "true");
 }
+navToggle.addEventListener("click", () => navToggle.classList.contains("open") ? closeMenu() : openMenu());
+document.querySelectorAll(".mobile-links a").forEach(a => a.addEventListener("click", closeMenu));
+document.addEventListener("click", e => { if (!document.getElementById("navbar").contains(e.target)) closeMenu(); });
 
-navToggle.addEventListener("click", () => {
-  navToggle.classList.contains("open") ? closeMenu() : openMenu();
-});
-
-// Fechar ao clicar em link do mobile
-document.querySelectorAll(".mobile-links a").forEach((a) =>
-  a.addEventListener("click", closeMenu)
-);
-
-// Fechar ao clicar fora
-document.addEventListener("click", (e) => {
-  if (!document.getElementById("navbar").contains(e.target)) closeMenu();
-});
-
-// ---- LANGUAGE SWITCHER ----
+// ============================================================
+//  i18n — TRADUÇÕES COMPLETAS
+// ============================================================
 let currentLang = "pt";
 
-function setLang(lang) {
-  currentLang = lang;
+const i18n = {
+  pt: {
+    "loader":"Explorando o mundo...",
+    "nav.home":"Início","nav.africa":"África do Sul","nav.australia":"Austrália","nav.nz":"Nova Zelândia","nav.sources":"Fontes",
+    "hero.eyebrow":"Uma jornada pelos confins do globo",
+    "hero.line1":"Mundos","hero.line2":"Além do","hero.line3":"Horizonte",
+    "hero.desc":"Explore a África do Sul, Austrália e Nova Zelândia — culturas milenares, lendas ancestrais, gastronomia, personagens e histórias que moldaram civilizações.",
+    "hero.cta":"Começar exploração","hero.scroll":"Role para explorar",
+    "common.million":"milhões","common.historicDates":"Datas Históricas","common.curiosities":"Curiosidades & Lendas",
+    "common.animals":"Animais Icônicos","common.food":"Principais Pratos Típicos","common.famous":"Top 20 Personalidades Famosas",
+    "common.culture":"Cultura Única","common.historicalIssues":"Questões Históricas",
+    "africa.title":"A Nação Arco-Íris",
+    "africa.subtitle":"11 línguas oficiais. 60 milhões de histórias. Um passado que transformou o mundo.",
+    "australia.title":"O Continente Ilha",
+    "australia.subtitle":"65.000 anos de história aborígene. O país mais plano, mais seco e mais isolado do mundo.",
+    "nz.title":"Aotearoa",
+    "nz.subtitle":"A Terra das Longas Nuvens Brancas. Lar dos Maori. O lugar onde o sol nasce primeiro.",
+    "comp.title":"Linha do Tempo Comparativa","comp.subtitle":"Eventos simultâneos nos três países",
+    "sources.title":"Fontes & Referências","sources.subtitle":"Todo o conteúdo é baseado em fontes verificáveis",
+    "footer.wordmark":"Mundos Além do Horizonte",
+    "footer.legal":"© 2026 Mundos Além do Horizonte. Trabalho de caráter educacional. Todos os direitos culturais e históricos pertencem aos povos representados.",
+    "footer.credit":" Desenvolvido por taaken",
+  },
+  en: {
+    "loader":"Exploring the world...",
+    "nav.home":"Home","nav.africa":"South Africa","nav.australia":"Australia","nav.nz":"New Zealand","nav.sources":"Sources",
+    "hero.eyebrow":"A journey to the ends of the globe",
+    "hero.line1":"Worlds","hero.line2":"Beyond the","hero.line3":"Horizon",
+    "hero.desc":"Explore South Africa, Australia and New Zealand — ancient cultures, ancestral legends, gastronomy, iconic figures and histories that shaped civilizations.",
+    "hero.cta":"Start exploring","hero.scroll":"Scroll to explore",
+    "common.million":"million","common.historicDates":"Historic Dates","common.curiosities":"Curiosities & Legends",
+    "common.animals":"Iconic Animals","common.food":"Traditional Dishes","common.famous":"Top 20 Famous Personalities",
+    "common.culture":"Unique Culture","common.historicalIssues":"Historical Issues",
+    "africa.title":"The Rainbow Nation",
+    "africa.subtitle":"11 official languages. 60 million stories. A past that changed the world.",
+    "australia.title":"The Island Continent",
+    "australia.subtitle":"65,000 years of Aboriginal history. The flattest, driest and most isolated country on Earth.",
+    "nz.title":"Aotearoa",
+    "nz.subtitle":"The Land of the Long White Cloud. Home of the Māori. The place where the sun rises first.",
+    "comp.title":"Comparative Timeline","comp.subtitle":"Simultaneous events across the three countries",
+    "sources.title":"Sources & References","sources.subtitle":"All content is based on verifiable sources",
+    "footer.wordmark":"Worlds Beyond the Horizon",
+    "footer.legal":"© 2026 Worlds Beyond the Horizon. Educational work. All cultural and historical rights belong to the peoples represented.",
+    "footer.credit":" Developed by taaken",
+  }
+};
 
-  // Atualizar todos os botões de idioma (nav + mobile)
-  document.querySelectorAll(".lang-btn").forEach((btn) => {
-    btn.classList.toggle("active", btn.dataset.lang === lang);
+function applyTranslations(lang) {
+  const t = i18n[lang];
+  if (!t) return;
+  document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
+  if (t["loader"]) document.title = lang === "pt" ? "Mundos Além do Horizonte" : "Worlds Beyond the Horizon";
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (t[key] === undefined) return;
+    // Only update direct text nodes (preserve child elements)
+    const kids = [...el.childNodes];
+    const textKids = kids.filter(n => n.nodeType === 3);
+    if (textKids.length && !kids.some(n => n.nodeType === 1)) {
+      el.textContent = t[key];
+    } else if (!kids.some(n => n.nodeType === 1)) {
+      el.textContent = t[key];
+    } else {
+      // Has child elements — update first text node only
+      const first = kids.find(n => n.nodeType === 3 && n.textContent.trim());
+      if (first) first.textContent = t[key];
+    }
   });
-
-  // Atualizar textos dos links que têm data-pt / data-en
-  document.querySelectorAll("a[data-pt]").forEach((a) => {
-    a.textContent = a.dataset[lang] || a.dataset.pt;
-  });
-
-  // Atualizar aria-label do toggle
+  document.querySelectorAll(".lang-btn").forEach(btn =>
+    btn.classList.toggle("active", btn.dataset.lang === lang)
+  );
   navToggle.setAttribute("aria-label", lang === "pt" ? "Abrir menu" : "Open menu");
 }
 
-// Eventos nos botões de idioma (todos, inclusive dentro do mobile menu)
-document.querySelectorAll(".lang-btn").forEach((btn) => {
-  btn.addEventListener("click", () => setLang(btn.dataset.lang));
-});
+function setLang(lang) {
+  currentLang = lang;
+  applyTranslations(lang);
+  rerenderDynamicCards();
+}
+
+document.querySelectorAll(".lang-btn").forEach(btn =>
+  btn.addEventListener("click", () => setLang(btn.dataset.lang))
+);
+
 
 
 // ---- SMOOTH SCROLL ----
@@ -279,6 +332,7 @@ const africaFamous = [
     tag: "Político / Ativista",
     wiki: "Nelson Mandela",
     desc: "Passou 27 anos preso por lutar contra o apartheid. Primeiro presidente negro eleito democraticamente (1994). Nobel da Paz em 1993.",
+    descEn: "Spent 27 years in prison fighting apartheid. First democratically elected Black president (1994). Nobel Peace Prize 1993.",
   },
   {
     rank: 2,
@@ -286,6 +340,7 @@ const africaFamous = [
     tag: "Empresário / Inovador",
     wiki: "Elon Musk",
     desc: "Nascido em Pretória. Fundou SpaceX, Tesla e Neuralink. Revolucionou a indústria automotiva elétrica e a exploração espacial privada.",
+    descEn: "Born in Pretoria. Founded SpaceX, Tesla and Neuralink. Revolutionized electric vehicles and private space exploration.",
   },
   {
     rank: 3,
@@ -293,6 +348,7 @@ const africaFamous = [
     tag: "Arcebispo / Ativista",
     wiki: "Desmond Tutu",
     desc: "Arcebispo que liderou a luta pacífica contra o apartheid. Nobel da Paz em 1984. Presidiu a Comissão da Verdade e Reconciliação.",
+    descEn: "Archbishop who led the peaceful struggle against apartheid. Nobel Peace Prize 1984. Chaired the Truth and Reconciliation Commission.",
   },
   {
     rank: 4,
@@ -300,6 +356,7 @@ const africaFamous = [
     tag: "Atriz",
     wiki: "Charlize Theron",
     desc: 'Natural de Benoni. Primeira sul-africana a ganhar o Oscar de Melhor Atriz por "Monster" (2003). Também produtora e ativista.',
+    descEn: "From Benoni. First South African to win Best Actress Oscar for Monster (2003). Also a producer and activist.",
   },
   {
     rank: 5,
@@ -307,6 +364,7 @@ const africaFamous = [
     tag: "Cirurgião",
     wiki: "Christiaan Barnard",
     desc: "Realizou o primeiro transplante de coração humano bem-sucedido em 1967, no Groote Schuur Hospital, Cidade do Cabo.",
+    descEn: "Performed the world's first successful human heart transplant in 1967 at Groote Schuur Hospital, Cape Town.",
   },
   {
     rank: 6,
@@ -314,6 +372,7 @@ const africaFamous = [
     tag: "Comediante / Apresentador",
     wiki: "Trevor Noah",
     desc: 'Nasceu em Johannesburg. Apresentou o The Daily Show por anos. Seu livro "Born a Crime" conta sua infância durante o apartheid.',
+    descEn: "Born in Johannesburg. Hosted The Daily Show for years. His book Born a Crime recounts his childhood during apartheid.",
   },
   {
     rank: 7,
@@ -321,6 +380,7 @@ const africaFamous = [
     tag: "Cantora / Ativista",
     wiki: "Miriam Makeba",
     desc: '"Mama Africa". Exilada por décadas por se opor ao apartheid. Seu Pata Pata é um dos grandes clássicos da música africana.',
+    descEn: "Mama Africa. Exiled for decades for opposing apartheid. Her Pata Pata is one of the great classics of African music.",
   },
   {
     rank: 8,
@@ -328,6 +388,7 @@ const africaFamous = [
     tag: "Escritor",
     wiki: "J. M. Coetzee",
     desc: 'Nobel de Literatura em 2003. Suas obras como "Desonra" exploram as tensões raciais e morais do pós-apartheid.',
+    descEn: "Nobel Prize in Literature 2003. Works like Disgrace explore the racial and moral tensions of post-apartheid South Africa.",
   },
   {
     rank: 9,
@@ -335,6 +396,7 @@ const africaFamous = [
     tag: "Atleta",
     wiki: "Caster Semenya",
     desc: "Campeã olímpica de 800m (2016). Sua carreira tornou-se centro de debate global sobre gênero, identidade e regulação esportiva.",
+    descEn: "Olympic 800m champion (2016). Her career became the centre of global debate on gender, identity and sport regulation.",
   },
   {
     rank: 10,
@@ -343,6 +405,7 @@ const africaFamous = [
     tag: "Ativista / Filósofo",
     wiki: "Steve Biko",
     desc: "Fundador do movimento da Consciência Negra. Morto sob custódia policial em 1977. Mártir da resistência ao apartheid.",
+    descEn: "Founder of the Black Consciousness Movement. Killed in police custody in 1977. Martyr of the resistance to apartheid.",
   },
   {
     rank: 11,
@@ -350,6 +413,7 @@ const africaFamous = [
     tag: "Rei / Guerreiro",
     wiki: "Shaka",
     desc: "Rei Zulu que criou um dos maiores impérios da África subsaariana no séc. XIX. Revolucionou as táticas de guerra africanas.",
+    descEn: "Zulu king who built one of the largest empires in sub-Saharan Africa in the 19th century. Revolutionized African warfare.",
   },
   {
     rank: 12,
@@ -358,6 +422,7 @@ const africaFamous = [
     tag: "Ativista / Política",
     wiki: "Winnie Madikizela-Mandela",
     desc: "Rosto do movimento anti-apartheid enquanto Nelson estava preso. Figura controversa e icônica da luta pela liberdade.",
+    descEn: "Face of the anti-apartheid movement while Nelson was imprisoned. Controversial and iconic figure of the freedom struggle.",
   },
   {
     rank: 13,
@@ -365,6 +430,7 @@ const africaFamous = [
     tag: "Político",
     wiki: "F. W. de Klerk",
     desc: "Último presidente branco da África do Sul. Negociou o fim do apartheid com Mandela. Nobel da Paz em 1993 (compartilhado).",
+    descEn: "Last white president of South Africa. Negotiated the end of apartheid with Mandela. Nobel Peace Prize 1993 (shared).",
   },
   {
     rank: 14,
@@ -373,6 +439,7 @@ const africaFamous = [
     wiki: "Black Coffee (musician)",
     localImg: "south_africa/artistas/Black-Coffee.jpeg",
     desc: "DJ e produtor que levou o Amapiano e o house africano para os maiores festivais do mundo. Grammy Internacional em 2022.",
+    descEn: "DJ and producer who brought Amapiano and African house to the world's biggest festivals. International Grammy 2022.",
   },
   {
     rank: 15,
@@ -381,6 +448,7 @@ const africaFamous = [
     tag: "General / Herói Bôer",
     wiki: "Christiaan de Wet",
     desc: "General Bôer lendário, nunca capturado pelos britânicos durante as guerras Anglo-Bôeres. Símbolo da resistência Afrikaner.",
+    descEn: "Legendary Boer general, never captured by the British during the Anglo-Boer Wars. Symbol of Afrikaner resistance.",
   },
   {
     rank: 16,
@@ -388,6 +456,7 @@ const africaFamous = [
     tag: "Ativista / Político",
     wiki: "Albert Luthuli",
     desc: "Primeiro africano e primeiro sul-africano a ganhar o Nobel da Paz (1960). Presidente do Congresso Nacional Africano por anos.",
+    descEn: "First African and first South African to win the Nobel Peace Prize (1960). President of the African National Congress.",
   },
   {
     rank: 17,
@@ -395,6 +464,7 @@ const africaFamous = [
     tag: "Grupo Musical",
     wiki: "Ladysmith Black Mambazo",
     desc: "Grupo coral sul-africano de isicathamiya. Ficaram famosos após colaborar com Paul Simon no álbum Graceland (1986). 5 Grammys.",
+    descEn: "South African isicathamiya choral group. Famous after collaborating with Paul Simon on Graceland (1986). 5 Grammys.",
   },
   {
     rank: 18,
@@ -402,6 +472,7 @@ const africaFamous = [
     tag: "Golfista",
     wiki: "Gary Player",
     desc: "Um dos maiores golfistas de todos os tempos. Único não-americano a vencer os quatro Grand Slams do golfe. Venceu 165 torneios.",
+    descEn: "One of the greatest golfers of all time. Only non-American to win all four golf Grand Slams. Won 165 tournaments.",
   },
   {
     rank: 19,
@@ -410,6 +481,7 @@ const africaFamous = [
     tag: "Técnico de Rugby",
     wiki: "Rassie Erasmus",
     desc: "Técnico dos Springboks que os levou ao tricampeonato mundial (2019 e 2023). Controverso e revolucionário na liderança esportiva.",
+    descEn: "Springboks coach who led them to three World Cup titles (2019 and 2023). Controversial and revolutionary sports leader.",
   },
   {
     rank: 20,
@@ -418,6 +490,7 @@ const africaFamous = [
     tag: "Cantora",
     wiki: "Brenda Fassie",
     desc: 'Conhecida como "A Madonna da África". Ícone do pop sul-africano cujas músicas ecoaram o fim do apartheid. Morreu em 2004 aos 39 anos.',
+    descEn: "Known as the Madonna of Africa. Icon of South African pop whose songs echoed the end of apartheid. Died 2004 aged 39.",
   },
 ];
 
@@ -428,6 +501,7 @@ const australiaFamous = [
     tag: "Atriz",
     wiki: "Cate Blanchett",
     desc: "Natural de Melbourne, vencedora de dois Oscar. Conhecida por Senhor dos Anéis, Blue Jasmine e Tár.",
+    descEn: "From Melbourne, two-time Oscar winner. Known for Lord of the Rings, Blue Jasmine and Tár.",
   },
   {
     rank: 2,
@@ -435,6 +509,7 @@ const australiaFamous = [
     tag: "Ator",
     wiki: "Hugh Jackman",
     desc: "Nascido em Sydney. Mundialmente famoso como Wolverine. Brilha também no teatro musical — apresentou os Tony Awards.",
+    descEn: "Born in Sydney. World-famous as Wolverine. Also shines in musical theatre — hosted the Tony Awards.",
   },
   {
     rank: 3,
@@ -442,13 +517,15 @@ const australiaFamous = [
     tag: "Naturalista / Apresentador",
     wiki: "Steve Irwin",
     desc: 'O "Caçador de Crocodilos". Tornou-se símbolo da Austrália pelo amor à vida selvagem. Morreu em 2006 pela ferroada de uma arraia.',
+    descEn: "The Crocodile Hunter. Symbol of Australia through his love of wildlife. Died in 2006 from a stingray barb.",
   },
   {
     rank: 4,
     name: "Kylie Minogue",
     tag: "Cantora",
     wiki: "Kylie Minogue",
-    desc: 'A "Princesa do Pop" australiana. "Can\'t Get You Out of My Head" é um dos maiores hits dos anos 2000.',
+    desc: 'A "Princesa do Pop" australiana. "Can\',
+    descEn: "Australia's Princess of Pop. Can't Get You Out of My Head is one of the biggest hits of the 2000s."t Get You Out of My Head" é um dos maiores hits dos anos 2000.',
   },
   {
     rank: 5,
@@ -456,6 +533,7 @@ const australiaFamous = [
     tag: "Atriz",
     wiki: "Nicole Kidman",
     desc: 'Criada em Sydney. Oscar por "The Hours" (2003). Uma das atrizes mais versáteis de Hollywood por mais de 40 anos.',
+    descEn: "Raised in Sydney. Oscar for The Hours (2003). One of Hollywood's most versatile actresses for over 40 years.",
   },
   {
     rank: 6,
@@ -463,6 +541,7 @@ const australiaFamous = [
     tag: "Magnata da mídia",
     wiki: "Rupert Murdoch",
     desc: "Fundou o império Fox News e News Corp. Um dos homens mais influentes da mídia mundial por décadas.",
+    descEn: "Founded the Fox News and News Corp empire. One of the most influential men in world media for decades.",
   },
   {
     rank: 7,
@@ -470,6 +549,7 @@ const australiaFamous = [
     tag: "Ator",
     wiki: "Geoffrey Rush",
     desc: "Um dos poucos atores a ganhar Oscar, Emmy, Tony e Grammy (EGOT). Famoso por Shine, Piratas do Caribe e The King's Speech.",
+    descEn: "One of the few actors to win an Oscar, Emmy, Tony and Grammy (EGOT). Famous for Shine, Pirates of the Caribbean and The King's Speech.",
   },
   {
     rank: 8,
@@ -477,6 +557,7 @@ const australiaFamous = [
     tag: "Atleta",
     wiki: "Cathy Freeman",
     desc: "Aborígene, campeã olímpica dos 400m em Sydney 2000. Acendeu a tocha olímpica e tornou-se símbolo de reconciliação nacional.",
+    descEn: "Aboriginal, Olympic 400m champion at Sydney 2000. Lit the Olympic torch and became a symbol of national reconciliation.",
   },
   {
     rank: 9,
@@ -484,6 +565,7 @@ const australiaFamous = [
     tag: "Médico / Cientista",
     wiki: "Barry Marshall",
     desc: "Nobel de Medicina (2005). Descobriu que úlceras são causadas por bactérias — e se infectou propositalmente para provar.",
+    descEn: "Nobel Prize in Medicine (2005). Discovered that ulcers are caused by bacteria — and deliberately infected himself to prove it.",
   },
   {
     rank: 10,
@@ -491,6 +573,7 @@ const australiaFamous = [
     tag: "Escritor",
     wiki: "Peter Carey (novelist)",
     desc: "Único australiano a vencer o Booker Prize duas vezes. Explora a identidade australiana e o mito de Ned Kelly.",
+    descEn: "The only Australian to win the Booker Prize twice. Explores Australian identity and the myth of Ned Kelly.",
   },
   {
     rank: 11,
@@ -498,6 +581,7 @@ const australiaFamous = [
     tag: "Fora-da-lei / Ícone",
     wiki: "Ned Kelly",
     desc: "O fora-da-lei mais famoso da Austrália. Usava uma armadura de aço artesanal. Enforcado em 1880. Símbolo de resistência ao poder.",
+    descEn: "Australia's most famous outlaw. Wore a homemade steel armour. Hanged in 1880. Symbol of resistance to authority.",
   },
   {
     rank: 12,
@@ -505,6 +589,7 @@ const australiaFamous = [
     tag: "Banda de Rock",
     wiki: "AC/DC",
     desc: 'Banda formada em Sydney em 1973. Uma das mais vendidas de todos os tempos. "Back in Black" é o segundo álbum mais vendido da história.',
+    descEn: "Band formed in Sydney in 1973. One of the best-selling of all time. Back in Black is the second best-selling album in history.",
   },
   {
     rank: 13,
@@ -512,6 +597,7 @@ const australiaFamous = [
     tag: "Cantora / Atriz",
     wiki: "Olivia Newton-John",
     desc: "Ícone dos anos 70-80. Grease foi o filme musical mais lucrativo da era. Vencedora de 4 Grammys. Dedicou a vida ao combate ao câncer.",
+    descEn: "Icon of the 70s–80s. Grease was the most profitable movie musical of the era. 4 Grammys. Devoted her life to fighting cancer.",
   },
   {
     rank: 14,
@@ -519,6 +605,7 @@ const australiaFamous = [
     tag: "Ator",
     wiki: "Russell Crowe",
     desc: "Nascido na Nova Zelândia, criado na Austrália. Oscar por Gladiador (2001). Um dos atores mais intensos de sua geração.",
+    descEn: "Born in New Zealand, raised in Australia. Oscar for Gladiator (2001). One of the most intense actors of his generation.",
   },
   {
     rank: 15,
@@ -526,6 +613,7 @@ const australiaFamous = [
     tag: "Ator",
     wiki: "Chris Hemsworth",
     desc: "Natural de Melbourne. Ficou mundialmente famoso como Thor no universo Marvel. Um dos atores mais bem pagos do mundo.",
+    descEn: "From Melbourne. Became world-famous as Thor in the Marvel universe. One of the world's highest-paid actors.",
   },
   {
     rank: 16,
@@ -533,6 +621,7 @@ const australiaFamous = [
     tag: "Feminista / Escritora",
     wiki: "Germaine Greer",
     desc: 'Autora de "O Eunuco Feminino" (1970), um dos textos fundadores do feminismo moderno. Uma das vozes mais controversas e influentes do séc. XX.',
+    descEn: "Author of The Female Eunuch (1970), one of the founding texts of modern feminism. Hugely controversial and influential.",
   },
   {
     rank: 17,
@@ -540,6 +629,7 @@ const australiaFamous = [
     tag: "General / Engenheiro",
     wiki: "John Monash",
     desc: "General da Primeira Guerra Mundial considerado o melhor comandante aliado do conflito. Sua imagem está na nota de 100 dólares australianos.",
+    descEn: "World War I general considered the best Allied commander of the conflict. His image is on the Australian 100-dollar note.",
   },
   {
     rank: 18,
@@ -547,6 +637,7 @@ const australiaFamous = [
     tag: "Escritor",
     wiki: "Patrick White",
     desc: "Primeiro australiano a ganhar o Nobel de Literatura (1973). Suas obras exploram a solidão e a espiritualidade na vastidão australiana.",
+    descEn: "First Australian to win the Nobel Prize in Literature (1973). His works explore solitude and spirituality across the Australian vastness.",
   },
   {
     rank: 19,
@@ -554,6 +645,7 @@ const australiaFamous = [
     tag: "Nadador",
     wiki: "Ian Thorpe",
     desc: '"Thorpedo" — considerado o melhor nadador de todos os tempos. 5 medalhas de ouro olímpicas, 11 títulos mundiais. Aposentou-se aos 24 anos.',
+    descEn: "Thorpedo — considered the greatest swimmer of all time. 5 Olympic gold medals, 11 world titles. Retired at age 24.",
   },
   {
     rank: 20,
@@ -561,6 +653,7 @@ const australiaFamous = [
     tag: "Político",
     wiki: "Gough Whitlam",
     desc: "PM que aboliu o serviço militar obrigatório, a política da Austrália Branca e introduziu saúde universal. Deposto num golpe constitucional em 1975.",
+    descEn: "PM who abolished conscription, the White Australia policy and introduced universal healthcare. Deposed in a constitutional coup in 1975.",
   },
 ];
 
@@ -571,6 +664,7 @@ const nzFamous = [
     tag: "Explorador / Alpinista",
     wiki: "Edmund Hillary",
     desc: "Primeiro a conquistar o Monte Everest em 1953. Herói nacional e símbolo de aventura. Seu rosto esteve na nota de 5 dólares.",
+    descEn: "First to summit Mount Everest in 1953. National hero and symbol of adventure. His face was on the 5-dollar note.",
   },
   {
     rank: 2,
@@ -578,6 +672,7 @@ const nzFamous = [
     tag: "Diretor de Cinema",
     wiki: "Peter Jackson",
     desc: "Nascido em Wellington. Triplicou o turismo neozelandês com O Senhor dos Anéis. 3 Oscar por O Retorno do Rei.",
+    descEn: "Born in Wellington. Tripled New Zealand's tourism with The Lord of the Rings. 3 Oscars for The Return of the King.",
   },
   {
     rank: 3,
@@ -585,6 +680,7 @@ const nzFamous = [
     tag: "Primeira-Ministra",
     wiki: "Jacinda Ardern",
     desc: "Segunda líder mundial a dar à luz no cargo. Sua resposta ao atentado de Christchurch tornou-a modelo global de liderança empática.",
+    descEn: "Second world leader to give birth in office. Her response to the Christchurch attack made her a global model of empathetic leadership.",
   },
   {
     rank: 4,
@@ -592,6 +688,7 @@ const nzFamous = [
     tag: "Físico Nuclear",
     wiki: "Ernest Rutherford",
     desc: "Nascido em Nelson. Descobriu a estrutura do átomo. Nobel de Química (1908). Pai da física nuclear.",
+    descEn: "Born in Nelson. Discovered the structure of the atom. Nobel Prize in Chemistry (1908). Father of nuclear physics.",
   },
   {
     rank: 5,
@@ -599,13 +696,15 @@ const nzFamous = [
     tag: "Rugbista",
     wiki: "Richie McCaw",
     desc: "Considerado o melhor jogador de rugby de todos os tempos. Capitão dos All Blacks em dois títulos mundiais (2011 e 2015).",
+    descEn: "Considered the greatest rugby player of all time. Captained the All Blacks to two World Cup titles (2011 and 2015).",
   },
   {
     rank: 6,
     name: "Lorde",
     tag: "Cantora",
     wiki: "Lorde",
-    desc: 'Ella Yelich-O\'Connor. Tinha 16 anos quando "Royals" chegou ao #1 global. Grammy na adolescência. Uma das vozes mais originais do pop.',
+    desc: 'Ella Yelich-O\',
+    descEn: "Ella Yelich-O'Connor. Was 16 when Royals hit #1 globally. Grammy as a teenager. One of pop's most original voices."Connor. Tinha 16 anos quando "Royals" chegou ao #1 global. Grammy na adolescência. Uma das vozes mais originais do pop.',
   },
   {
     rank: 7,
@@ -613,6 +712,7 @@ const nzFamous = [
     tag: "Ator",
     wiki: "Sam Neill",
     desc: "Famoso por Parque dos Dinossauros, Peaky Blinders e Hunt for the Wilderpeople. É também proprietário de vinícola premiada.",
+    descEn: "Famous for Jurassic Park, Peaky Blinders and Hunt for the Wilderpeople. Also owner of an award-winning vineyard.",
   },
   {
     rank: 8,
@@ -620,6 +720,7 @@ const nzFamous = [
     tag: "Escritora",
     wiki: "Katherine Mansfield",
     desc: "Uma das mais importantes escritoras de contos em língua inglesa. Morreu aos 34 anos, mas influenciou gerações de escritores.",
+    descEn: "One of the most important short-story writers in English. Died aged 34, but influenced generations of writers.",
   },
   {
     rank: 9,
@@ -627,6 +728,7 @@ const nzFamous = [
     tag: "Rugbista",
     wiki: "Jonah Lomu",
     desc: "O primeiro grande astro global do rugby. Sua atuação na Copa de 1995 é lendária. Morreu precocemente em 2015 aos 40 anos.",
+    descEn: "The first global rugby superstar. His performance at the 1995 World Cup is legendary. Died prematurely in 2015 aged 40.",
   },
   {
     rank: 10,
@@ -634,6 +736,7 @@ const nzFamous = [
     tag: "Diretor / Ator",
     wiki: "Taika Waititi",
     desc: 'Maori. Oscar de Roteiro por "Jojo Rabbit". Dirigiu Thor: Ragnarok e What We Do in the Shadows.',
+    descEn: "Maori. Oscar for Best Adapted Screenplay for Jojo Rabbit. Directed Thor: Ragnarok and What We Do in the Shadows.",
   },
   {
     rank: 11,
@@ -641,6 +744,7 @@ const nzFamous = [
     tag: "Sufragista / Ativista",
     wiki: "Kate Sheppard",
     desc: "Liderou o movimento sufragista que garantiu o voto feminino em 1893 — a primeira vez no mundo. Seu rosto está na nota de 10 dólares.",
+    descEn: "Led the suffragist movement that won women the vote in 1893 — the first time in the world. Her face is on the 10-dollar note.",
   },
   {
     rank: 12,
@@ -648,6 +752,7 @@ const nzFamous = [
     tag: "Soprano / Cantora Lírica",
     wiki: "Kiri Te Kanawa",
     desc: "Maori, uma das maiores sopranos do século XX. Cantou no casamento do Príncipe Charles com Lady Di em 1981, assistido por 600 milhões de pessoas.",
+    descEn: "Māori, one of the great sopranos of the 20th century. Sang at Prince Charles and Lady Di's wedding in 1981, watched by 600 million.",
   },
   {
     rank: 13,
@@ -655,13 +760,15 @@ const nzFamous = [
     tag: "Rugbista",
     wiki: "Dan Carter",
     desc: "Eleito três vezes o melhor jogador de rugby do mundo. Maior artilheiro da história dos All Blacks. Ícone absoluto do esporte neozelandês.",
+    descEn: "Voted world's best rugby player three times. All Blacks' all-time leading scorer. Absolute icon of New Zealand sport.",
   },
   {
     rank: 14,
     name: "Neil Finn",
     tag: "Músico",
     wiki: "Neil Finn",
-    desc: "Fundador do Crowded House, autor de \"Don't Dream It's Over\" — um dos maiores hits do rock australiano/neozelandês. Ícone da música pop.",
+    desc: "Fundador do Crowded House, autor de \",
+    descEn: "Founder of Crowded House, author of \"Don't Dream It's Over\" — one of the biggest rock hits. Icon of pop music."Don't Dream It's Over\" — um dos maiores hits do rock australiano/neozelandês. Ícone da música pop.",
   },
   {
     rank: 15,
@@ -669,6 +776,7 @@ const nzFamous = [
     tag: "Golfista",
     wiki: "Lydia Ko",
     desc: "A mais jovem golfista — homem ou mulher — a atingir o ranking mundial #1. Nascida na Coreia do Sul, representa a Nova Zelândia.",
+    descEn: "The youngest golfer — male or female — to reach world #1. Born in South Korea, represents New Zealand.",
   },
   {
     rank: 16,
@@ -676,6 +784,7 @@ const nzFamous = [
     tag: "Cientista",
     wiki: "Alan MacDiarmid",
     desc: "Nobel de Química (2000) pela descoberta dos polímeros condutores — material base de telas OLED usadas em smartphones modernos.",
+    descEn: "Nobel Prize in Chemistry (2000) for discovering conducting polymers — the base material for OLED screens in modern smartphones.",
   },
   {
     rank: 17,
@@ -683,6 +792,7 @@ const nzFamous = [
     tag: "Cantora",
     wiki: "Hayley Westenra",
     desc: "Soprano neozelandesa que se tornou a artista mais jovem a ter um álbum de estreia no topo das paradas britânicas. Voz cristalina internacionalmente reconhecida.",
+    descEn: "New Zealand soprano who became the youngest artist to have a debut album top the British charts. Internationally recognised crystalline voice.",
   },
   {
     rank: 18,
@@ -690,6 +800,7 @@ const nzFamous = [
     tag: "Rugbista / Lenda Maori",
     wiki: "Jonah Lomu",
     desc: "Figura representando o legado das lendas do rugby Maori que moldaram o estilo agressivo e técnico dos All Blacks ao longo de décadas.",
+    descEn: "Figure representing the legacy of Māori rugby legends who shaped the aggressive and technical style of the All Blacks for decades.",
   },
   {
     rank: 19,
@@ -697,6 +808,7 @@ const nzFamous = [
     tag: "Diretora de Cinema",
     wiki: "Jane Campion",
     desc: 'Primeira mulher a ganhar a Palma de Ouro em Cannes (1993, "O Piano"). Oscar de Roteiro. Pioneira do cinema de autoria feminino no mundo.',
+    descEn: "First woman to win the Palme d'Or at Cannes (1993, The Piano). Oscar for Best Screenplay. Pioneer of female auteur cinema.",
   },
   {
     rank: 20,
@@ -704,145 +816,169 @@ const nzFamous = [
     tag: "Político / Líder Maori",
     wiki: "Āpirana Ngata",
     desc: "Primeiro Maori a se formar em uma universidade neozelandesa. Parlamentar por décadas. Lutou para preservar a cultura e língua Maori.",
+    descEn: "First Māori to graduate from a New Zealand university. MP for decades. Fought to preserve Māori culture and language.",
   },
 ];
 
 // ---- ANIMALS DATA ----
 const africaAnimals = [
   {
-    name: "Leão",
+    name: "Leão", "nameEn":"Lion",
     wiki: "Lion",
     desc: "Rei da savana. Vive em grupos chamados alcateias. O maior predador terrestre da África.",
+    "descEn":"King of the savanna. Lives in groups called prides. Africa's largest terrestrial predator.",
   },
   {
-    name: "Elefante Africano",
+    name: "Elefante Africano", "nameEn":"African Elephant",
     wiki: "African_bush_elephant",
     desc: "Maior animal terrestre do mundo. Inteligente, social e com memória prodigiosa. Ameaçado pela caça ilegal.",
+    "descEn":"The world's largest land animal. Intelligent, social, with a prodigious memory. Threatened by poaching.",
   },
   {
-    name: "Rinoceronte",
+    name: "Rinoceronte", "nameEn":"Rhinoceros",
     wiki: "White_rhinoceros",
     desc: "Criticamente ameaçado de extinção pela caça furtiva. Seu chifre é queratina pura — o mesmo material das unhas humanas.",
+    "descEn":"Critically endangered due to poaching. Its horn is pure keratin — the same material as human nails.",
   },
   {
-    name: "Leopardo",
+    name: "Leopardo", "nameEn":"Leopard",
     wiki: "Leopard",
     desc: "O mais elusivo dos Big Five. Caçador noturno solitário. Carrega suas presas para o alto das árvores.",
+    "descEn":"The most elusive of the Big Five. A solitary nocturnal hunter. Drags its prey up into trees.",
   },
   {
-    name: "Búfalo Africano",
+    name: "Búfalo Africano", "nameEn":"African Buffalo",
     wiki: "African_buffalo",
     desc: "Considerado o mais perigoso dos Big Five. Nunca foi domesticado. Responsável por muitas mortes humanas na África.",
+    "descEn":"Considered the most dangerous of the Big Five. Never domesticated. Responsible for many human deaths in Africa.",
   },
   {
-    name: "Girafa",
+    name: "Girafa", "nameEn":"Giraffe",
     wiki: "Giraffe",
     desc: "Animal mais alto do mundo. Seu coração deve bombear sangue 2m acima do corpo. Dorme apenas 30 minutos por dia.",
+    "descEn":"World's tallest animal. Its heart must pump blood 2 m above the body. Sleeps only 30 minutes a day.",
   },
 ];
 
 const australiaAnimals = [
   {
-    name: "Canguru",
+    name: "Canguru", "nameEn":"Kangaroo",
     wiki: "Red_kangaroo",
     desc: "Símbolo nacional. O maior marsupial do mundo. Um filhote nasce do tamanho de um feijão e completa o desenvolvimento na bolsa da mãe.",
+    "descEn":"National symbol. The world's largest marsupial. A joey is born the size of a bean and finishes developing in its mother's pouch.",
   },
   {
-    name: "Coala",
+    name: "Coala", "nameEn":"Koala",
     wiki: "Koala",
     desc: "Dorme até 22 horas por dia para economizar energia digerindo folhas de eucalipto — que são tóxicas para outros animais.",
+    "descEn":"Sleeps up to 22 hours a day to digest eucalyptus leaves — toxic to other animals.",
   },
   {
-    name: "Ornitorrinco",
+    name: "Ornitorrinco", "nameEn":"Platypus",
     wiki: "Platypus",
     desc: "Mamífero que bota ovos, tem bico de pato, rabo de castor e é um dos poucos mamíferos venenosos do mundo.",
+    "descEn":"An egg-laying mammal with a duck bill, beaver tail, and one of the few venomous mammals in the world.",
   },
   {
-    name: "Tasmanian Devil",
+    name: "Tasmanian Devil", "nameEn":"Tasmanian Devil",
     wiki: "Tasmanian_devil",
     desc: "O maior marsupial carnívoro vivo. Tem a mordida mais forte proporcional ao tamanho entre todos os mamíferos.",
+    "descEn":"The world's largest living carnivorous marsupial. Has the strongest bite relative to body size of all mammals.",
   },
   {
-    name: "Dingo",
+    name: "Dingo", "nameEn":"Dingo",
     wiki: "Dingo",
     desc: "Cão selvagem australiano. Para mantê-los afastados das ovelhas, foi construída a maior cerca do mundo: 5.614 km.",
+    "descEn":"Australia's wild dog. To keep them away from sheep, the world's longest fence was built: 5,614 km.",
   },
   {
-    name: "Emú",
+    name: "Emú", "nameEn":"Emu",
     wiki: "Emu",
     desc: "Segundo maior pássaro do mundo. Em 1932, o governo australiano declarou guerra aos emus — e os pássaros venceram.",
+    "descEn":"Second largest bird in the world. In 1932, the Australian government declared war on emus — and the birds won.",
   },
 ];
 
 const nzAnimals = [
   {
-    name: "Kiwi",
+    name: "Kiwi", "nameEn":"Kiwi",
     wiki: "Kiwi_(bird)",
     desc: "Ave nacional. Não voa, tem narinas na ponta do bico e cheira o alimento no chão. Criticamente ameaçada de extinção.",
+    "descEn":"National bird. Cannot fly, has nostrils at the tip of its bill. Critically endangered.",
   },
   {
-    name: "Tuatara",
+    name: "Tuatara", "nameEn":"Tuatara",
     wiki: "Tuatara",
     desc: "Réptil que existe há 250 milhões de anos — praticamente inalterado desde a era dos dinossauros. Exclusivo da Nova Zelândia.",
+    "descEn":"A reptile unchanged for 250 million years — since the age of the dinosaurs. Exclusive to New Zealand.",
   },
   {
-    name: "Kea",
+    name: "Kea", "nameEn":"Kea",
     wiki: "Kea",
     desc: "O único papagaio alpino do mundo. Extremamente inteligente e curioso. Conhecido por desmontar carros e roubar objetos de turistas.",
+    "descEn":"The world's only alpine parrot. Extremely intelligent and curious. Known for dismantling cars and stealing tourists' belongings.",
   },
   {
-    name: "Kakapo",
+    name: "Kakapo", "nameEn":"Kakapo",
     wiki: "Kakapo",
     localImg: "new_zeland/animals/kakapo.jpeg",
     desc: "O papagaio mais gordo do mundo — e incapaz de voar. Criticamente ameaçado com apenas ~250 indivíduos vivos.",
+    "descEn":"The world's fattest parrot — and flightless. Critically endangered with only ~250 individuals alive.",
   },
   {
-    name: "Baleia Franca",
+    name: "Baleia Franca", "nameEn":"Southern Right Whale",
     wiki: "Southern_right_whale",
     desc: "Migra anualmente para as costas da NZ para se reproduzir. O local de observação de baleias de Kaikoura é um dos melhores do mundo.",
+    "descEn":"Migrates annually to NZ's coasts to breed. Kaikoura is one of the world's best whale-watching spots.",
   },
   {
-    name: "Golfinho Hector",
+    name: "Golfinho Hector", "nameEn":"Hector's Dolphin",
     wiki: "Hector's_dolphin",
     localImg: "new_zeland/animals/dolphin-hector.jpeg",
     desc: "O menor e mais raro golfinho do mundo. Só existe nas águas da Nova Zelândia. Menos de 15.000 indivíduos restantes.",
+    "descEn":"The world's smallest and rarest dolphin. Found only in New Zealand's waters. Fewer than 15,000 remain.",
   },
 ];
 
 // ---- FOOD DATA ----
 const africaFood = [
   {
-    name: "Braai",
+    name: "Braai", nameEn:"Braai",
     bg: "#8B4513",
     desc: "O churrasco sul-africano. Mais que comida — é um ritual social. Carne assada em lenha. Existe até o Dia Nacional do Braai (24 de setembro).",
+    descEn:"The South African barbecue — more than food, it's a social ritual. Grilled over wood. There's even a National Braai Day (24 Sep).",
     img: "south_africa/pratos_tipicos/braai.webp",
   },
   {
-    name: "Bobotie",
+    name: "Bobotie", nameEn:"Bobotie",
     bg: "#c9a227",
     desc: "Prato nacional: carne moída temperada com curry, coberta com creme de ovos e assada. Servido com arroz amarelo com passas.",
+    descEn:"The national dish: curried minced meat topped with egg custard and baked. Served with yellow rice and raisins.",
     img: "south_africa/pratos_tipicos/sul-bobtie-1200x675.webp",
   },
   {
-    name: "Boerewors",
+    name: "Boerewors", nameEn:"Boerewors",
     bg: "#5c3317",
     desc: "Linguiça artesanal enrolada em espiral. Para ser chamada de boerewors, deve ter pelo menos 90% de carne bovina — protegido por lei.",
+    descEn:"Spiral coiled sausage. To be called boerewors it must contain at least 90% beef — protected by law.",
     img: "south_africa/pratos_tipicos/boerewors-1200x675.webp",
   },
   {
-    name: "Chakalaka",
+    name: "Chakalaka", nameEn:"Chakalaka",
     bg: "#2d6a4f",
     desc: "Relish apimentado de vegetais (cebola, tomate, pimentão, feijão). Originado nas townships, hoje é clássico nacional.",
+    descEn:"Spicy vegetable relish (onion, tomato, peppers, beans). Born in the townships, now a national classic.",
     img: "south_africa/pratos_tipicos/chakalaka-1200x675.webp",
   },
   {
-    name: "Bunny Chow",
+    name: "Bunny Chow", nameEn:"Bunny Chow",
     bg: "#b5451b",
     desc: "Pão branco escavado e recheado com curry — criação da comunidade indiana de Durban nos anos 1940. Comida de rua icônica.",
+    descEn:"Hollowed white bread filled with curry — created by Durban's Indian community in the 1940s. Iconic street food.",
     img: "south_africa/pratos_tipicos/bunny-chow-1200x675.webp",
   },
   {
-    name: "Biltong",
+    name: "Biltong", nameEn:"Biltong",
     bg: "#6b3a2a",
     desc: 'Carne seca temperada com especiarias — o "jerky" sul-africano. Feito de carne bovina, avestruz ou caça. Snack onipresente no país.',
     img: "south_africa/pratos_tipicos/cbiltong-1200x675.webp",
@@ -851,37 +987,41 @@ const africaFood = [
 
 const australiaFood = [
   {
-    name: "Meat Pie",
+    name: "Meat Pie", nameEn:"Meat Pie",
     bg: "#8B5E3C",
     desc: "O pastelão de carne com gravy é o prato nacional não oficial. Presente em todo estádio de críquete e futebol australiano.",
+    descEn:"The meat-and-gravy pie is the unofficial national dish. Found at every Australian cricket and football stadium.",
     img: "australia/pratos_tipicos/Meat-Pie-4x3.jpg",
   },
   {
-    name: "Vegemite",
+    name: "Vegemite", nameEn:"Vegemite",
     bg: "#2b2d42",
     desc: "Pasta escura de extrato de levedura — ícone cultural. Australianos crescem comendo no café da manhã. Estrangeiros frequentemente odeiam.",
+    descEn:"A dark yeast-extract paste — a cultural icon. Australians grow up eating it at breakfast. Foreigners often hate it.",
     img: "australia/pratos_tipicos/vegemite-1024x667.jpg",
   },
   {
-    name: "Pavlova",
+    name: "Pavlova", nameEn:"Pavlova",
     bg: "#e9c46a",
     desc: "Merengue crocante por fora, macio por dentro, coberto com creme e frutas. A origem é disputada com a Nova Zelândia.",
+    descEn:"Crispy meringue outside, soft inside, topped with cream and fruit. Its origin is disputed with New Zealand.",
     img: "australia/pratos_tipicos/PAVLOVA-25-S-01-500x500.webp",
   },
   {
-    name: "Tim Tam",
+    name: "Tim Tam", nameEn:"Tim Tam",
     bg: "#3d1e0f",
     desc: 'Biscoito de chocolate banhado em chocolate. O "Tim Tam Slam": morder as pontas e beber café através do biscoito — ritual sagrado.',
     img: "australia/pratos_tipicos/Tim_Tams.jpg",
   },
   {
-    name: "Lamington",
+    name: "Lamington", nameEn:"Lamington",
     bg: "#4a1f5e",
     desc: "Bolo de baunilha mergulhado em chocolate e coberto com coco ralado. Tão amado que tem seu próprio Dia Nacional (21 de julho).",
+    descEn:"Vanilla sponge dipped in chocolate and rolled in desiccated coconut. So beloved it has its own National Day (21 July).",
     img: "australia/pratos_tipicos/LAMINGTON-LAYER-CAKE-25-S-01-500x500.jpg",
   },
   {
-    name: "Barramundi",
+    name: "Barramundi", nameEn:"Barramundi",
     bg: "#457b9d",
     desc: 'Peixe nativo, apreciado grelhado ou em fritas. Seu nome vem da língua aborígene e significa "peixe de grande escama".',
     img: "australia/pratos_tipicos/Barramundi-swimming.webp",
@@ -890,94 +1030,84 @@ const australiaFood = [
 
 const nzFood = [
   {
-    name: "Hangi",
+    name: "Hangi", nameEn:"Hangi",
     bg: "#2b4570",
     desc: "Refeição Maori cozida em buraco na terra com pedras quentes. Frango, porco, batata-doce e vegetais cozinham horas embaixo da terra.",
+    descEn:"A Māori meal cooked in a ground pit with hot stones. Chicken, pork, kumara and vegetables cook for hours underground.",
     img: "new_zeland/pratos_tipicos/Hangi.jpg",
   },
   {
-    name: "Pavlova (NZ reclama!)",
+    name: "Pavlova (NZ reclama!)", nameEn:"Pavlova (NZ claims it!)",
     bg: "#e9c46a",
     desc: "Os neozelandeses têm documentos que comprovam a criação anterior à versão australiana. Debate acalorado que dura décadas.",
+    descEn:"New Zealanders have documents proving their version predates Australia's. A heated debate lasting decades.",
     img: "new_zeland/pratos_tipicos/pavlova-de-frutas.jpg",
   },
   {
-    name: "Whitebait Fritter",
+    name: "Whitebait Fritter", nameEn:"Whitebait Fritter",
     bg: "#774936",
     desc: "Omelete leve recheado com pequenos peixes brancos translúcidos. Iguaria tão apreciada que a temporada de pesca é rigorosamente controlada.",
+    descEn:"A light fritter filled with tiny translucent white fish. Such a prized delicacy that its fishing season is strictly controlled.",
     img: "new_zeland/pratos_tipicos/Whitebait-take.webp",
   },
   {
-    name: "Kumara",
+    name: "Kumara", nameEn:"Kumara",
     bg: "#e76f51",
     desc: "Batata-doce roxa trazida pelos Maori da Polinésia. O vegetal mais culturalmente significativo do país — aparece em cerimônias tradicionais.",
+    descEn:"Purple sweet potato brought by the Māori from Polynesia. The most culturally significant vegetable — appears in traditional ceremonies.",
     img: "new_zeland/pratos_tipicos/Kumara.jpg",
   },
   {
-    name: "Kiwifruit",
+    name: "Kiwifruit", nameEn:"Kiwifruit",
     bg: "#588157",
     desc: 'Originalmente "gooseberry chinês", rebatizado "kiwi" pelos neozelandeses. A NZ é um dos maiores produtores mundiais.',
     img: "new_zeland/pratos_tipicos/Kiwi-fruit.webp",
   },
   {
-    name: "Cordeiro Assado",
+    name: "Cordeiro Assado", nameEn:"Roast Lamb",
     bg: "#d62828",
     desc: "A NZ é o maior exportador de carne ovina do mundo. O lamb roast dominical é tradição familiar desde os colonizadores britânicos.",
+    descEn:"NZ is the world's largest lamb exporter. The Sunday lamb roast has been a family tradition since British colonial times.",
     img: "new_zeland/pratos_tipicos/Cordeiro-Assado.jpg",
   },
 ];
 
-// ---- RENDER FUNCTIONS ----
+// ---- RENDER FUNCTIONS (lang-aware) ----
 
 function renderAnimals(containerId, animals) {
   const container = document.getElementById(containerId);
   if (!container) return;
   const imageList = [];
-
   animals.forEach((a) => {
+    const name = currentLang === "en" && a.nameEn ? a.nameEn : a.name;
+    const desc = currentLang === "en" && a.descEn ? a.descEn : a.desc;
     const card = document.createElement("div");
     card.className = "animal-card visible";
     card.style.cursor = "pointer";
     card.innerHTML = `
-      <div class="animal-img-wrap">
-        <div class="animal-img-placeholder"></div>
-      </div>
+      <div class="animal-img-wrap"><div class="animal-img-placeholder"></div></div>
       <div class="animal-info">
-        <h4>${a.name}</h4>
-        <p>${a.desc}</p>
-      </div>
-    `;
+        <h4 class="animal-name">${name}</h4>
+        <p class="animal-desc">${desc}</p>
+      </div>`;
     container.appendChild(card);
-
     const ph = card.querySelector(".animal-img-placeholder");
-
     const loadImg = (src) => {
       if (!src || !ph) return;
       const imgEl = document.createElement("img");
-      imgEl.className = "animal-img";
-      imgEl.src = src;
-      imgEl.alt = a.name;
-      imgEl.loading = "lazy";
+      imgEl.className = "animal-img"; imgEl.src = src; imgEl.alt = name; imgEl.loading = "lazy";
       imgEl.onerror = () => (imgEl.style.display = "none");
       ph.replaceWith(imgEl);
-      // Register in imageList for lightbox
-      const entry = { src, caption: a.name };
-      if (!imageList.find((x) => x.caption === a.name)) {
-        imageList.push(entry);
-      }
+      const entry = { src, caption: name };
+      if (!imageList.find((x) => x.caption === name)) imageList.push(entry);
       card.addEventListener("click", () => {
-        const idx = imageList.findIndex((x) => x.caption === a.name);
+        const idx = imageList.findIndex((x) => x.caption === name);
         openLightbox(imageList, idx >= 0 ? idx : 0);
       });
     };
-
-    if (a.localImg) {
-      loadImg(a.localImg);
-    } else if (a.img) {
-      loadImg(a.img);
-    } else {
-      getWikiThumb(a.wiki, 300).then(loadImg).catch(() => {});
-    }
+    if (a.localImg) loadImg(a.localImg);
+    else if (a.img)   loadImg(a.img);
+    else getWikiThumb(a.wiki, 300).then(loadImg).catch(() => {});
   });
 }
 
@@ -985,185 +1115,87 @@ function renderFood(containerId, foods) {
   const container = document.getElementById(containerId);
   if (!container) return;
   foods.forEach((f) => {
+    const name = currentLang === "en" && f.nameEn ? f.nameEn : f.name;
+    const desc = currentLang === "en" && f.descEn ? f.descEn : f.desc;
     const card = document.createElement("div");
     card.className = "food-card visible";
     const imgHtml = f.img
-      ? `<img src="${f.img}" alt="${f.name}" loading="lazy" style="width:100%;height:160px;object-fit:cover;display:block;" onerror="this.style.display='none';" />`
+      ? `<img src="${f.img}" alt="${name}" loading="lazy" style="width:100%;height:160px;object-fit:cover;display:block;" onerror="this.style.display='none';" />`
       : `<div class="food-img-placeholder" style="background:${f.bg}"></div>`;
     card.innerHTML = `
       <div class="food-img-wrap">${imgHtml}</div>
-      <div class="food-info">
-        <h4>${f.name}</h4>
-        <p>${f.desc}</p>
-      </div>
-    `;
+      <div class="food-info"><h4>${name}</h4><p>${desc}</p></div>`;
     container.appendChild(card);
   });
 }
 
-function renderFamous(containerId, people, tagClass = "") {
-  const container = document.getElementById(containerId);
-  if (!container) return;
-  people.forEach(async (p) => {
-    const card = document.createElement("div");
-    card.className = `famous-card ${tagClass} visible`;
-    card.innerHTML = `
-      <div class="famous-photo-wrap">
-        <div class="famous-photo-placeholder" id="fph-${containerId}-${p.rank}">${p.emoji}</div>
-        <div class="famous-rank-badge">${String(p.rank).padStart(2, "0")}</div>
-      </div>
-      <div class="famous-info">
-        <h4>${p.name}</h4>
-        <span class="famous-tag ${tagClass.replace("famous", "").replace("card", "").trim()}-tag">${p.tag}</span>
-        <p>${p.desc}</p>
-      </div>
-    `;
-    container.appendChild(card);
-    // Try Wikipedia image
-    const src = await getWikiThumb(p.wiki, 200);
-    if (src) {
-      const ph = document.getElementById(`fph-${containerId}-${p.rank}`);
-      if (ph) {
-        const imgEl = document.createElement("img");
-        imgEl.className = "famous-photo";
-        imgEl.src = src;
-        imgEl.alt = p.name;
-        imgEl.loading = "lazy";
-        imgEl.onerror = () => {
-          imgEl.style.display = "none";
-        };
-        ph.replaceWith(imgEl);
-      }
-    }
-  });
-}
-
-// Fix tag class for famous cards
-function renderFamousAfrica(id) {
+function renderFamousCards(id, people, cardClass, tagClass) {
   const container = document.getElementById(id);
   if (!container) return;
-  africaFamous.forEach((p) => {
+  people.forEach((p) => {
+    const desc = currentLang === "en" && p.descEn ? p.descEn : p.desc;
+    const tag  = currentLang === "en" && p.tagEn  ? p.tagEn  : p.tag;
     const card = document.createElement("div");
-    card.className = "famous-card visible";
+    card.className = `famous-card ${cardClass} visible`;
     card.innerHTML = `
       <div class="famous-photo-wrap">
-        <div class="famous-photo-placeholder">${p.emoji}</div>
+        <div class="famous-photo-placeholder"></div>
         <div class="famous-rank-badge">${String(p.rank).padStart(2, "0")}</div>
       </div>
       <div class="famous-info">
         <h4>${p.name}</h4>
-        <span class="famous-tag">${p.tag}</span>
-        <p>${p.desc}</p>
-      </div>
-    `;
+        <span class="famous-tag ${tagClass}">${tag}</span>
+        <p>${desc}</p>
+      </div>`;
     container.appendChild(card);
     const ph = card.querySelector(".famous-photo-placeholder");
     const loadImg = (src) => {
       if (!src || !ph) return;
       const imgEl = document.createElement("img");
-      imgEl.className = "famous-photo";
-      imgEl.src = src;
-      imgEl.alt = p.name;
-      imgEl.loading = "lazy";
+      imgEl.className = "famous-photo"; imgEl.src = src; imgEl.alt = p.name; imgEl.loading = "lazy";
       imgEl.onerror = () => (imgEl.style.display = "none");
       ph.replaceWith(imgEl);
     };
-    if (p.localImg) {
-      loadImg(p.localImg);
-      return;
-    }
-    getWikiThumb(p.wiki, 200)
-      .then(loadImg)
-      .catch(() => {});
+    if (p.localImg) { loadImg(p.localImg); return; }
+    getWikiThumb(p.wiki, 200).then(loadImg).catch(() => {});
   });
 }
+function renderFamousAfrica(id) { renderFamousCards(id, africaFamous, "", ""); }
+function renderFamousAu(id)     { renderFamousCards(id, australiaFamous, "au-famous", "au-tag"); }
+function renderFamousNz(id)     { renderFamousCards(id, nzFamous,       "nz-famous", "nz-tag"); }
 
-function renderFamousAu(id) {
-  const container = document.getElementById(id);
-  if (!container) return;
-  australiaFamous.forEach((p) => {
-    const card = document.createElement("div");
-    card.className = "famous-card au-famous visible";
-    card.innerHTML = `
-      <div class="famous-photo-wrap">
-        <div class="famous-photo-placeholder">${p.emoji}</div>
-        <div class="famous-rank-badge">${String(p.rank).padStart(2, "0")}</div>
-      </div>
-      <div class="famous-info">
-        <h4>${p.name}</h4>
-        <span class="famous-tag au-tag">${p.tag}</span>
-        <p>${p.desc}</p>
-      </div>
-    `;
-    container.appendChild(card);
-    getWikiThumb(p.wiki, 200)
-      .then((src) => {
-        if (!src) return;
-        const ph = card.querySelector(".famous-photo-placeholder");
-        if (!ph) return;
-        const imgEl = document.createElement("img");
-        imgEl.className = "famous-photo";
-        imgEl.src = src;
-        imgEl.alt = p.name;
-        imgEl.loading = "lazy";
-        imgEl.onerror = () => (imgEl.style.display = "none");
-        ph.replaceWith(imgEl);
-      })
-      .catch(() => {});
+function rerenderDynamicCards() {
+  ["africa-animals","australia-animals","nz-animals",
+   "africa-food","australia-food","nz-food",
+   "africa-famous","australia-famous","nz-famous"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.innerHTML = "";
   });
-}
-
-function renderFamousNz(id) {
-  const container = document.getElementById(id);
-  if (!container) return;
-  nzFamous.forEach((p) => {
-    const card = document.createElement("div");
-    card.className = "famous-card nz-famous visible";
-    card.innerHTML = `
-      <div class="famous-photo-wrap">
-        <div class="famous-photo-placeholder">${p.emoji}</div>
-        <div class="famous-rank-badge">${String(p.rank).padStart(2, "0")}</div>
-      </div>
-      <div class="famous-info">
-        <h4>${p.name}</h4>
-        <span class="famous-tag nz-tag">${p.tag}</span>
-        <p>${p.desc}</p>
-      </div>
-    `;
-    container.appendChild(card);
-    getWikiThumb(p.wiki, 200)
-      .then((src) => {
-        if (!src) return;
-        const ph = card.querySelector(".famous-photo-placeholder");
-        if (!ph) return;
-        const imgEl = document.createElement("img");
-        imgEl.className = "famous-photo";
-        imgEl.src = src;
-        imgEl.alt = p.name;
-        imgEl.loading = "lazy";
-        imgEl.onerror = () => (imgEl.style.display = "none");
-        ph.replaceWith(imgEl);
-      })
-      .catch(() => {});
-  });
+  renderAnimals("africa-animals",    africaAnimals);
+  renderAnimals("australia-animals", australiaAnimals);
+  renderAnimals("nz-animals",        nzAnimals);
+  renderFood("africa-food",    africaFood);
+  renderFood("australia-food", australiaFood);
+  renderFood("nz-food",        nzFood);
+  renderFamousAfrica("africa-famous");
+  renderFamousAu("australia-famous");
+  renderFamousNz("nz-famous");
 }
 
 // ---- INIT ----
 document.addEventListener("DOMContentLoaded", () => {
-  renderAnimals("africa-animals", africaAnimals);
+  renderAnimals("africa-animals",    africaAnimals);
   renderAnimals("australia-animals", australiaAnimals);
-  renderAnimals("nz-animals", nzAnimals);
-
-  renderFood("africa-food", africaFood);
+  renderAnimals("nz-animals",        nzAnimals);
+  renderFood("africa-food",    africaFood);
   renderFood("australia-food", australiaFood);
-  renderFood("nz-food", nzFood);
-
+  renderFood("nz-food",        nzFood);
   renderFamousAfrica("africa-famous");
   renderFamousAu("australia-famous");
   renderFamousNz("nz-famous");
 });
 
-console.log(" Mundos Além do Horizonte — carregado!");
+console.log("🌍 Mundos Além do Horizonte — carregado!");
 
 // ====================================================================
 //  MAPA INTERATIVO
