@@ -524,8 +524,8 @@ const australiaFamous = [
     name: "Kylie Minogue",
     tag: "Cantora",
     wiki: "Kylie Minogue",
-    desc: 'A "Princesa do Pop" australiana. "Can\',
-    descEn: "Australia's Princess of Pop. Can't Get You Out of My Head is one of the biggest hits of the 2000s."t Get You Out of My Head" é um dos maiores hits dos anos 2000.',
+    desc: 'A "Princesa do Pop" australiana. "Can\'t Get You Out of My Head" é um dos maiores hits dos anos 2000.',
+    descEn: "Australia's Princess of Pop. Can't Get You Out of My Head is one of the biggest hits of the 2000s.",
   },
   {
     rank: 5,
@@ -703,8 +703,8 @@ const nzFamous = [
     name: "Lorde",
     tag: "Cantora",
     wiki: "Lorde",
-    desc: 'Ella Yelich-O\',
-    descEn: "Ella Yelich-O'Connor. Was 16 when Royals hit #1 globally. Grammy as a teenager. One of pop's most original voices."Connor. Tinha 16 anos quando "Royals" chegou ao #1 global. Grammy na adolescência. Uma das vozes mais originais do pop.',
+    desc: "Ella Yelich-O'Connor. Tinha 16 anos quando \"Royals\" chegou ao #1 global. Grammy na adolescência. Uma das vozes mais originais do pop.",
+    descEn: "Ella Yelich-O'Connor. Was 16 when Royals hit #1 globally. Grammy as a teenager. One of pop's most original voices.",
   },
   {
     rank: 7,
@@ -767,8 +767,8 @@ const nzFamous = [
     name: "Neil Finn",
     tag: "Músico",
     wiki: "Neil Finn",
-    desc: "Fundador do Crowded House, autor de \",
-    descEn: "Founder of Crowded House, author of \"Don't Dream It's Over\" — one of the biggest rock hits. Icon of pop music."Don't Dream It's Over\" — um dos maiores hits do rock australiano/neozelandês. Ícone da música pop.",
+    desc: "Fundador do Crowded House, autor de \"Don't Dream It's Over\" — um dos maiores hits do rock australiano/neozelandês. Ícone da música pop.",
+    descEn: "Founder of Crowded House, author of \"Don't Dream It's Over\" — one of the biggest rock hits. Icon of pop music.",
   },
   {
     rank: 15,
