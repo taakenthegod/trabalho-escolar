@@ -111,34 +111,6 @@ body {
 }
 #navbar.scrolled { height: 60px; }
 
-/* Lang switcher */
-.nav-lang {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  flex-shrink: 0;
-}
-.lang-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.15em;
-  color: var(--text-faint);
-  padding: 0.25rem 0.35rem;
-  transition: color var(--transition);
-  text-transform: uppercase;
-}
-.lang-btn:hover { color: var(--accent2); }
-.lang-btn.active { color: var(--accent); }
-.lang-sep {
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  color: var(--text-faint);
-  pointer-events: none;
-}
-
 /* Nav links — desktop */
 .nav-links {
   display: flex;
@@ -180,33 +152,34 @@ body {
 .nav-toggle {
   display: none;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 5px;
   width: 40px; height: 40px;
+  padding: 11px 11px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   cursor: pointer;
   flex-shrink: 0;
+  order: -1;
   transition: border-color var(--transition), background var(--transition);
-  padding: 0;
 }
 .nav-toggle:hover { border-color: var(--accent); background: var(--surface2); }
 .nav-toggle .bar {
   display: block;
-  width: 18px; height: 1.5px;
+  width: 18px; height: 2px;
   background: var(--text-muted);
   border-radius: 2px;
+  flex-shrink: 0;
   transition: transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94),
               opacity 0.25s ease,
               background var(--transition);
   transform-origin: center;
 }
 .nav-toggle:hover .bar { background: var(--accent); }
-.nav-toggle.open .bar:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle.open .bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
 .nav-toggle.open .bar:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.nav-toggle.open .bar:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.nav-toggle.open .bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
 /* Mobile menu dropdown */
 .mobile-menu {
@@ -252,8 +225,6 @@ body {
   transition: color var(--transition), padding-left var(--transition);
 }
 .mobile-links a:hover { color: var(--accent2); padding-left: 0.5rem; }
-.mobile-lang { display: flex; align-items: center; gap: 0.5rem; padding-top: 0.5rem; }
-
 /* Responsive show/hide */
 @media (max-width: 768px) {
   .nav-links { display: none; }
